@@ -3,29 +3,43 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09A8FF3653A2DACBFEB38B11 /* Pods_OneMomForAll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3601B2B1C04BB7B6B3072037 /* Pods_OneMomForAll.framework */; };
+		A7AA02BD240608880076CB25 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AA02BC240608880076CB25 /* DashboardController.swift */; };
 		A7D78E4F2405BDB100138B2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D78E4E2405BDB100138B2F /* AppDelegate.swift */; };
 		A7D78E512405BDB100138B2F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D78E502405BDB100138B2F /* SceneDelegate.swift */; };
-		A7D78E532405BDB100138B2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D78E522405BDB100138B2F /* ViewController.swift */; };
+		A7D78E532405BDB100138B2F /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D78E522405BDB100138B2F /* WelcomeViewController.swift */; };
 		A7D78E562405BDB100138B2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D78E542405BDB100138B2F /* Main.storyboard */; };
 		A7D78E592405BDB100138B2F /* OneMomForAll.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7D78E572405BDB100138B2F /* OneMomForAll.xcdatamodeld */; };
 		A7D78E5B2405BDB300138B2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7D78E5A2405BDB300138B2F /* Assets.xcassets */; };
 		A7D78E5E2405BDB300138B2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D78E5C2405BDB300138B2F /* LaunchScreen.storyboard */; };
+		A7D78E682405C10100138B2F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D78E672405C10100138B2F /* Constants.swift */; };
+		A7D78E6E2405C76700138B2F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A7D78E6D2405C76700138B2F /* GoogleService-Info.plist */; };
+		A7D78E702405CDB100138B2F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D78E6F2405CDB100138B2F /* RegisterViewController.swift */; };
+		A7D78E722405CDE500138B2F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D78E712405CDE500138B2F /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A7D78E4B2405BDB100138B2F /* OneMomForAll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneMomForAll.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1983A492A8B1E2787DDD94B2 /* Pods-OneMomForAll.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneMomForAll.debug.xcconfig"; path = "Target Support Files/Pods-OneMomForAll/Pods-OneMomForAll.debug.xcconfig"; sourceTree = "<group>"; };
+		3601B2B1C04BB7B6B3072037 /* Pods_OneMomForAll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneMomForAll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BB781AEACA08E107AE79406 /* Pods-OneMomForAll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneMomForAll.release.xcconfig"; path = "Target Support Files/Pods-OneMomForAll/Pods-OneMomForAll.release.xcconfig"; sourceTree = "<group>"; };
+		A7AA02BC240608880076CB25 /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
+		A7D78E4B2405BDB100138B2F /* OMFA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OMFA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D78E4E2405BDB100138B2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7D78E502405BDB100138B2F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A7D78E522405BDB100138B2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A7D78E522405BDB100138B2F /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		A7D78E552405BDB100138B2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A7D78E582405BDB100138B2F /* OneMomForAll.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OneMomForAll.xcdatamodel; sourceTree = "<group>"; };
 		A7D78E5A2405BDB300138B2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7D78E5D2405BDB300138B2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A7D78E5F2405BDB300138B2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7D78E672405C10100138B2F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A7D78E6D2405C76700138B2F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A7D78E6F2405CDB100138B2F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		A7D78E712405CDE500138B2F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,24 +47,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09A8FF3653A2DACBFEB38B11 /* Pods_OneMomForAll.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5CC14EB006413FAC33734917 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1983A492A8B1E2787DDD94B2 /* Pods-OneMomForAll.debug.xcconfig */,
+				6BB781AEACA08E107AE79406 /* Pods-OneMomForAll.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A7D78E422405BDB100138B2F = {
 			isa = PBXGroup;
 			children = (
 				A7D78E4D2405BDB100138B2F /* OneMomForAll */,
 				A7D78E4C2405BDB100138B2F /* Products */,
+				5CC14EB006413FAC33734917 /* Pods */,
+				D6059C444571C1EA063B302D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		A7D78E4C2405BDB100138B2F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A7D78E4B2405BDB100138B2F /* OneMomForAll.app */,
+				A7D78E4B2405BDB100138B2F /* OMFA.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,14 +86,43 @@
 			children = (
 				A7D78E4E2405BDB100138B2F /* AppDelegate.swift */,
 				A7D78E502405BDB100138B2F /* SceneDelegate.swift */,
-				A7D78E522405BDB100138B2F /* ViewController.swift */,
-				A7D78E542405BDB100138B2F /* Main.storyboard */,
+				A7D78E662405BFD500138B2F /* Controllers */,
+				A7D78E652405BFCB00138B2F /* Views */,
 				A7D78E5A2405BDB300138B2F /* Assets.xcassets */,
 				A7D78E5C2405BDB300138B2F /* LaunchScreen.storyboard */,
 				A7D78E5F2405BDB300138B2F /* Info.plist */,
 				A7D78E572405BDB100138B2F /* OneMomForAll.xcdatamodeld */,
+				A7D78E6D2405C76700138B2F /* GoogleService-Info.plist */,
+				A7D78E672405C10100138B2F /* Constants.swift */,
 			);
 			path = OneMomForAll;
+			sourceTree = "<group>";
+		};
+		A7D78E652405BFCB00138B2F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A7D78E542405BDB100138B2F /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A7D78E662405BFD500138B2F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A7D78E522405BDB100138B2F /* WelcomeViewController.swift */,
+				A7D78E6F2405CDB100138B2F /* RegisterViewController.swift */,
+				A7D78E712405CDE500138B2F /* LoginViewController.swift */,
+				A7AA02BC240608880076CB25 /* DashboardController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D6059C444571C1EA063B302D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3601B2B1C04BB7B6B3072037 /* Pods_OneMomForAll.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +132,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A7D78E622405BDB300138B2F /* Build configuration list for PBXNativeTarget "OneMomForAll" */;
 			buildPhases = (
+				7A1D1CDAF53217EA20E8A558 /* [CP] Check Pods Manifest.lock */,
 				A7D78E472405BDB100138B2F /* Sources */,
 				A7D78E482405BDB100138B2F /* Frameworks */,
 				A7D78E492405BDB100138B2F /* Resources */,
+				EF3872D73CB996E92C141064 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -87,7 +144,7 @@
 			);
 			name = OneMomForAll;
 			productName = OneMomForAll;
-			productReference = A7D78E4B2405BDB100138B2F /* OneMomForAll.app */;
+			productReference = A7D78E4B2405BDB100138B2F /* OMFA.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -129,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7D78E5E2405BDB300138B2F /* LaunchScreen.storyboard in Resources */,
+				A7D78E6E2405C76700138B2F /* GoogleService-Info.plist in Resources */,
 				A7D78E5B2405BDB300138B2F /* Assets.xcassets in Resources */,
 				A7D78E562405BDB100138B2F /* Main.storyboard in Resources */,
 			);
@@ -136,13 +194,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7A1D1CDAF53217EA20E8A558 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OneMomForAll-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF3872D73CB996E92C141064 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OneMomForAll/Pods-OneMomForAll-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OneMomForAll/Pods-OneMomForAll-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OneMomForAll/Pods-OneMomForAll-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A7D78E472405BDB100138B2F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7AA02BD240608880076CB25 /* DashboardController.swift in Sources */,
+				A7D78E722405CDE500138B2F /* LoginViewController.swift in Sources */,
+				A7D78E682405C10100138B2F /* Constants.swift in Sources */,
+				A7D78E702405CDB100138B2F /* RegisterViewController.swift in Sources */,
 				A7D78E592405BDB100138B2F /* OneMomForAll.xcdatamodeld in Sources */,
-				A7D78E532405BDB100138B2F /* ViewController.swift in Sources */,
+				A7D78E532405BDB100138B2F /* WelcomeViewController.swift in Sources */,
 				A7D78E4F2405BDB100138B2F /* AppDelegate.swift in Sources */,
 				A7D78E512405BDB100138B2F /* SceneDelegate.swift in Sources */,
 			);
@@ -286,6 +390,7 @@
 		};
 		A7D78E632405BDB300138B2F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1983A492A8B1E2787DDD94B2 /* Pods-OneMomForAll.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -296,7 +401,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.thedevelopark.OneMomForAll;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = OMFA;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -304,6 +409,7 @@
 		};
 		A7D78E642405BDB300138B2F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BB781AEACA08E107AE79406 /* Pods-OneMomForAll.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -314,7 +420,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.thedevelopark.OneMomForAll;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = OMFA;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -1,0 +1,6 @@
+framework module Pods_OneMomForAll {
+  umbrella header "Pods-OneMomForAll-umbrella.h"
+
+  export *
+  module * { export * }
+}
