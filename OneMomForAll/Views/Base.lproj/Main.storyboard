@@ -21,48 +21,48 @@
                                 <color key="textColor" red="1" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1q-ZH-KVb">
-                                <rect key="frame" x="0.0" y="807" width="414" height="55"/>
-                                <color key="backgroundColor" red="1" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="Zj8-zx-8GA"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <state key="normal" title="Log In">
-                                    <color key="titleColor" red="0.080323077739999998" green="0.21182638409999999" blue="0.2289803624" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" red="0.080323077739999998" green="0.21182638409999999" blue="0.2289803624" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="6PU-HP-9u6" kind="show" identifier="LoginVC" id="gps-mF-Pnb"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LEt-6C-Y1c">
-                                <rect key="frame" x="0.0" y="732" width="414" height="55"/>
-                                <color key="backgroundColor" red="0.14117647059999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="IdY-tf-rSf"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <state key="normal" title="Register">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="KCs-UC-1RU" kind="show" identifier="RegisterVC" id="vhu-HN-n3D"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="496-ZU-08H">
+                                <rect key="frame" x="0.0" y="706" width="414" height="140"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LEt-6C-Y1c">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="55"/>
+                                        <color key="backgroundColor" red="0.14117647059999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="IdY-tf-rSf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <state key="normal" title="Register">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="KCs-UC-1RU" kind="show" identifier="RegisterVC" id="vhu-HN-n3D"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1q-ZH-KVb">
+                                        <rect key="frame" x="0.0" y="85" width="414" height="55"/>
+                                        <color key="backgroundColor" red="1" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="Zj8-zx-8GA"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <state key="normal" title="Log In">
+                                            <color key="titleColor" red="0.080323077739999998" green="0.21182638409999999" blue="0.2289803624" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.080323077739999998" green="0.21182638409999999" blue="0.2289803624" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="6PU-HP-9u6" kind="show" identifier="LoginVC" id="gps-mF-Pnb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.080323077739999998" green="0.21182638409999999" blue="0.2289803624" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="LEt-6C-Y1c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FEx-Ae-h0c"/>
-                            <constraint firstItem="f1q-ZH-KVb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KO8-i8-lXg"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LEt-6C-Y1c" secondAttribute="trailing" id="bGJ-wX-VMD"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="f1q-ZH-KVb" secondAttribute="trailing" id="byf-0q-UG5"/>
-                            <constraint firstItem="LEt-6C-Y1c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tex-iy-Z2T"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="f1q-ZH-KVb" secondAttribute="bottom" id="tu0-yX-qht"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="496-ZU-08H" secondAttribute="trailing" id="dED-hg-gY2"/>
+                            <constraint firstItem="496-ZU-08H" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gvk-o7-1z3"/>
                             <constraint firstItem="2hg-YP-q4s" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="uR0-bO-2Fj"/>
                             <constraint firstItem="2hg-YP-q4s" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yrm-XB-0JS"/>
-                            <constraint firstItem="f1q-ZH-KVb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yw7-mE-sMm"/>
-                            <constraint firstItem="f1q-ZH-KVb" firstAttribute="top" secondItem="LEt-6C-Y1c" secondAttribute="bottom" constant="20" id="zla-LE-gbj"/>
+                            <constraint firstAttribute="bottom" secondItem="496-ZU-08H" secondAttribute="bottom" constant="50" id="z4q-jx-Fzn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -180,26 +180,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dashboard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBc-lu-fvQ">
-                                <rect key="frame" x="148" y="218" width="119" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oka-0u-0Xi">
+                                <rect key="frame" x="20" y="113" width="179.5" height="42"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="35"/>
                                 <color key="textColor" red="1" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iRv-Uq-zGg">
-                                <rect key="frame" x="74" y="298" width="198" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <state key="normal" title="Parent Profile">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iRv-Uq-zGg">
+                                <rect key="frame" x="354" y="115.5" width="40" height="35.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="iRv-Uq-zGg" secondAttribute="height" multiplier="1:1" id="Uxr-8B-Qzw"/>
+                                    <constraint firstAttribute="width" constant="40" id="WTq-ww-njU"/>
+                                    <constraint firstAttribute="height" constant="40" id="yeq-Yi-qqk"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" backgroundImage="pencil" catalog="system">
                                     <color key="titleColor" red="1" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="eU2-Eg-sVM" kind="show" identifier="DashToProfile" id="v2b-x7-aHf"/>
+                                    <action selector="updateProfileBtn:" destination="54z-nW-dYw" eventType="touchUpInside" id="h3S-84-5M9"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJA-ZR-NtQ">
-                                <rect key="frame" x="84" y="400" width="168" height="54"/>
+                                <rect key="frame" x="77" y="315" width="168" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <state key="normal" title="Kids Profile">
@@ -209,36 +212,80 @@
                                     <segue destination="eU2-Eg-sVM" kind="show" identifier="DashToProfile" id="vAb-Vx-BFT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xrx-SE-2he">
-                                <rect key="frame" x="20" y="772" width="186" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <state key="normal" title="Find parents">
-                                    <color key="titleColor" red="1" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="dzv-5c-D3r" kind="show" identifier="DashToMap" id="n8x-RD-Pk8"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bw4-Ea-bZx">
-                                <rect key="frame" x="290" y="772" width="90" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <state key="normal" title="Chats">
-                                    <color key="titleColor" red="1" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="cUm-wy-HLR" kind="show" identifier="DashToChat" id="LRj-tS-fHo"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="9RP-7N-y1R" userLabel="BotBtns Stack View">
+                                <rect key="frame" x="20" y="762" width="374" height="100"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="zAC-oJ-GR3" userLabel="Location Stack View">
+                                        <rect key="frame" x="0.0" y="0.0" width="187" height="100"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbR-QW-hkr">
+                                                <rect key="frame" x="0.0" y="0.0" width="187" height="50"/>
+                                                <color key="tintColor" red="1" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" image="location.circle" catalog="system"/>
+                                                <connections>
+                                                    <segue destination="dzv-5c-D3r" kind="show" identifier="DashToMap" id="mZ0-Ru-XA1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xrx-SE-2he">
+                                                <rect key="frame" x="0.0" y="50" width="187" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <color key="tintColor" red="1" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Parents">
+                                                    <color key="titleColor" red="1" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="dzv-5c-D3r" kind="show" identifier="DashToMap" id="n8x-RD-Pk8"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="SqA-7l-ja1" userLabel="Chat Stack View">
+                                        <rect key="frame" x="187" y="0.0" width="187" height="100"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcA-qL-FGg">
+                                                <rect key="frame" x="0.0" y="0.0" width="187" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <color key="tintColor" red="1" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" image="text.bubble" catalog="system"/>
+                                                <connections>
+                                                    <segue destination="cUm-wy-HLR" kind="show" identifier="DashToChat" id="4DH-al-Kcv"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bw4-Ea-bZx">
+                                                <rect key="frame" x="0.0" y="50" width="187" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <color key="tintColor" red="1" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Chats">
+                                                    <color key="titleColor" red="1" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="cUm-wy-HLR" kind="show" identifier="DashToChat" id="LRj-tS-fHo"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="9kn-g6-ZEl"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.080323077739999998" green="0.21182638409999999" blue="0.2289803624" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Oka-0u-0Xi" firstAttribute="top" secondItem="jrM-Dz-d9g" secondAttribute="top" constant="25" id="N8B-Ud-JOV"/>
+                            <constraint firstItem="iRv-Uq-zGg" firstAttribute="top" secondItem="jrM-Dz-d9g" secondAttribute="top" constant="25" id="O2q-0g-0vf"/>
+                            <constraint firstItem="jrM-Dz-d9g" firstAttribute="bottom" secondItem="9RP-7N-y1R" secondAttribute="bottom" id="Q2w-j0-gLh"/>
+                            <constraint firstAttribute="trailing" secondItem="9RP-7N-y1R" secondAttribute="trailing" constant="20" symbolic="YES" id="X1V-oG-h4L"/>
+                            <constraint firstItem="9RP-7N-y1R" firstAttribute="leading" secondItem="hxb-Py-n7d" secondAttribute="leading" constant="20" symbolic="YES" id="iou-GG-AlY"/>
+                            <constraint firstItem="jrM-Dz-d9g" firstAttribute="trailing" secondItem="iRv-Uq-zGg" secondAttribute="trailing" constant="20" id="sMc-1j-IDq"/>
+                            <constraint firstItem="Oka-0u-0Xi" firstAttribute="leading" secondItem="jrM-Dz-d9g" secondAttribute="leading" constant="20" id="uFb-qv-63l"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="jrM-Dz-d9g"/>
                     </view>
                     <navigationItem key="navigationItem" title="OMFA👩🏽" id="rr0-wM-gLB">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="hVl-2c-zXD">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Mcq-HV-lgm">
-                                <rect key="frame" x="302" y="7" width="92" height="30"/>
+                                <rect key="frame" x="339" y="7" width="55" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Log Out"/>
                                 <connections>
@@ -247,10 +294,13 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="username" destination="Oka-0u-0Xi" id="iXZ-io-sEa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9a4-IC-1nO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3242" y="119"/>
+            <point key="canvasLocation" x="3240.579710144928" y="118.52678571428571"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="EGQ-Wm-b66">
@@ -468,9 +518,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="location.circle" catalog="system" width="64" height="60"/>
+        <image name="pencil" catalog="system" width="64" height="56"/>
+        <image name="text.bubble" catalog="system" width="64" height="54"/>
         <image name="textfield" width="298" height="93"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="v2b-x7-aHf"/>
+        <segue reference="4DH-al-Kcv"/>
+        <segue reference="n8x-RD-Pk8"/>
     </inferredMetricsTieBreakers>
 </document>

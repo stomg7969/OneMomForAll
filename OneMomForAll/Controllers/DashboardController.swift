@@ -11,11 +11,16 @@ import Firebase
 
 class DashboardController: UIViewController {
 
+    var loggedInUser: User?
+    
+    @IBOutlet weak var username: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
         title = K.appName
-        // Do any additional setup after loading the view.
+        
+        username.text = loggedInUser?.name
     }
     
     @IBAction func logOutBtn(_ sender: UIButton) {
@@ -29,14 +34,32 @@ class DashboardController: UIViewController {
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func updateProfileBtn(_ sender: UIButton) {
+        var textField = UITextField()
+        
+        let alert = UIAlertController(title: "New Nickname", message: "", preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        let action = UIAlertAction(title: "Update", style: .default) { (action) in
+            
+            self.loggedInUser!.name = textField.text!
+            self.username.text = textField.text!
+            self.loggedInUser!.nameUpdated = true
+//            self.updateUI(textField.text!)
+            
+        }
+        alert.addAction(action)
+        alert.addAction(cancel)
+        alert.addTextField { (field) in
+            textField = field
+            textField.placeholder = "Enter new nickname"
+        }
+        present(alert, animated: true, completion: nil)
     }
-    */
+    
+//    func updateUI(_ name: String) {
+//        loggedInUser!.name = name
+//        loggedInUser!.nameUpdated = true
+//    }
 
 }

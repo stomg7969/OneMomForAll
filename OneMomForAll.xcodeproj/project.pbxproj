@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		09A8FF3653A2DACBFEB38B11 /* Pods_OneMomForAll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3601B2B1C04BB7B6B3072037 /* Pods_OneMomForAll.framework */; };
 		A7AA02BD240608880076CB25 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AA02BC240608880076CB25 /* DashboardController.swift */; };
+		A7C102BE24076F96003653F4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C102BD24076F95003653F4 /* User.swift */; };
 		A7D78E4F2405BDB100138B2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D78E4E2405BDB100138B2F /* AppDelegate.swift */; };
 		A7D78E512405BDB100138B2F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D78E502405BDB100138B2F /* SceneDelegate.swift */; };
 		A7D78E532405BDB100138B2F /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D78E522405BDB100138B2F /* WelcomeViewController.swift */; };
 		A7D78E562405BDB100138B2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D78E542405BDB100138B2F /* Main.storyboard */; };
-		A7D78E592405BDB100138B2F /* OneMomForAll.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7D78E572405BDB100138B2F /* OneMomForAll.xcdatamodeld */; };
 		A7D78E5B2405BDB300138B2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7D78E5A2405BDB300138B2F /* Assets.xcassets */; };
 		A7D78E5E2405BDB300138B2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D78E5C2405BDB300138B2F /* LaunchScreen.storyboard */; };
 		A7D78E682405C10100138B2F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D78E672405C10100138B2F /* Constants.swift */; };
@@ -27,12 +27,12 @@
 		3601B2B1C04BB7B6B3072037 /* Pods_OneMomForAll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneMomForAll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BB781AEACA08E107AE79406 /* Pods-OneMomForAll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneMomForAll.release.xcconfig"; path = "Target Support Files/Pods-OneMomForAll/Pods-OneMomForAll.release.xcconfig"; sourceTree = "<group>"; };
 		A7AA02BC240608880076CB25 /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
+		A7C102BD24076F95003653F4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A7D78E4B2405BDB100138B2F /* OMFA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OMFA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D78E4E2405BDB100138B2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7D78E502405BDB100138B2F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A7D78E522405BDB100138B2F /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		A7D78E552405BDB100138B2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A7D78E582405BDB100138B2F /* OneMomForAll.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OneMomForAll.xcdatamodel; sourceTree = "<group>"; };
 		A7D78E5A2405BDB300138B2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7D78E5D2405BDB300138B2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A7D78E5F2405BDB300138B2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -63,6 +63,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A7C102BC24076F7E003653F4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A7C102BD24076F95003653F4 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		A7D78E422405BDB100138B2F = {
 			isa = PBXGroup;
 			children = (
@@ -86,12 +94,12 @@
 			children = (
 				A7D78E4E2405BDB100138B2F /* AppDelegate.swift */,
 				A7D78E502405BDB100138B2F /* SceneDelegate.swift */,
+				A7C102BC24076F7E003653F4 /* Models */,
 				A7D78E662405BFD500138B2F /* Controllers */,
 				A7D78E652405BFCB00138B2F /* Views */,
 				A7D78E5A2405BDB300138B2F /* Assets.xcassets */,
 				A7D78E5C2405BDB300138B2F /* LaunchScreen.storyboard */,
 				A7D78E5F2405BDB300138B2F /* Info.plist */,
-				A7D78E572405BDB100138B2F /* OneMomForAll.xcdatamodeld */,
 				A7D78E6D2405C76700138B2F /* GoogleService-Info.plist */,
 				A7D78E672405C10100138B2F /* Constants.swift */,
 			);
@@ -245,7 +253,7 @@
 				A7D78E722405CDE500138B2F /* LoginViewController.swift in Sources */,
 				A7D78E682405C10100138B2F /* Constants.swift in Sources */,
 				A7D78E702405CDB100138B2F /* RegisterViewController.swift in Sources */,
-				A7D78E592405BDB100138B2F /* OneMomForAll.xcdatamodeld in Sources */,
+				A7C102BE24076F96003653F4 /* User.swift in Sources */,
 				A7D78E532405BDB100138B2F /* WelcomeViewController.swift in Sources */,
 				A7D78E4F2405BDB100138B2F /* AppDelegate.swift in Sources */,
 				A7D78E512405BDB100138B2F /* SceneDelegate.swift in Sources */,
@@ -448,19 +456,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		A7D78E572405BDB100138B2F /* OneMomForAll.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				A7D78E582405BDB100138B2F /* OneMomForAll.xcdatamodel */,
-			);
-			currentVersion = A7D78E582405BDB100138B2F /* OneMomForAll.xcdatamodel */;
-			path = OneMomForAll.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = A7D78E432405BDB100138B2F /* Project object */;
 }
