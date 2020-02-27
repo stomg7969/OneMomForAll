@@ -37,7 +37,7 @@ class LoginViewController: UIViewController {
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! DashboardController
-                
-        destinationVC.loggedInUser = User(email: emailField.text!)
+        // Send over logged in user's email to filter out other than current user.
+        destinationVC.currUserEmail = emailField.text!
     }
 }

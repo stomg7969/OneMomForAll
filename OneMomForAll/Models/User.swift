@@ -7,9 +7,12 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct User {
-    let email: String
-    var name: String = "TemporaryName"
-    var nameUpdated: Bool = false
+class User: Object {
+    @objc dynamic var email: String = ""
+    @objc dynamic var name: String = "TemporaryName"
+    @objc dynamic var nameUpdated: Bool = false
+    let children = List<Child>()
+    let chats = List<Chat>()
 }

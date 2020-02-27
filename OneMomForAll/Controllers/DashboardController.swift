@@ -8,10 +8,14 @@
 
 import UIKit
 import Firebase
+import RealmSwift
 
 class DashboardController: UIViewController {
 
-    var loggedInUser: User?
+    var currUserEmail: String?
+    var user: Results<User>?
+    let realm = try! Realm() // Valid way of declaring for realm.
+    
     
     @IBOutlet weak var username: UILabel!
     
@@ -20,9 +24,9 @@ class DashboardController: UIViewController {
         navigationItem.hidesBackButton = true
         title = K.appName
         
-        username.text = loggedInUser?.name
+        loadUserInfo()
     }
-    
+    //MARK: - Log out
     @IBAction func logOutBtn(_ sender: UIButton) {
         do {
             try Auth.auth().signOut()
@@ -33,7 +37,7 @@ class DashboardController: UIViewController {
             print ("Error signing out: %@", signOutError)
         }
     }
-    
+    //MARK: - Update User Nickname
     @IBAction func updateProfileBtn(_ sender: UIButton) {
         var textField = UITextField()
         
@@ -42,11 +46,15 @@ class DashboardController: UIViewController {
         
         let action = UIAlertAction(title: "Update", style: .default) { (action) in
             
-            self.loggedInUser!.name = textField.text!
-            self.username.text = textField.text!
-            self.loggedInUser!.nameUpdated = true
-//            self.updateUI(textField.text!)
-            
+            do {
+                try self.realm.write {
+                    self.user?.first?.name = textField.text!
+                    self.username.text = textField.text!
+                    self.user?.first?.nameUpdated = true
+                }
+            } catch {
+                print("Error updating user's nickname, \(error)")
+            }
         }
         alert.addAction(action)
         alert.addAction(cancel)
@@ -56,10 +64,15 @@ class DashboardController: UIViewController {
         }
         present(alert, animated: true, completion: nil)
     }
+    //MARK: - User Children List
+    // asdfasdf
+    // asdfasdf
     
-//    func updateUI(_ name: String) {
-//        loggedInUser!.name = name
-//        loggedInUser!.nameUpdated = true
-//    }
-
+    
+    //MARK: - Data Manipulation
+    func loadUserInfo() {
+        // Filter all except current user.
+        user = realm.objects(User.self).filter("email CONTAINS[cd] %@", currUserEmail!)
+        username.text = user?.first?.name
+    }
 }

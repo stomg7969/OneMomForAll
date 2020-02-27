@@ -10,6 +10,9 @@
 		09A8FF3653A2DACBFEB38B11 /* Pods_OneMomForAll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3601B2B1C04BB7B6B3072037 /* Pods_OneMomForAll.framework */; };
 		A7AA02BD240608880076CB25 /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AA02BC240608880076CB25 /* DashboardController.swift */; };
 		A7C102BE24076F96003653F4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C102BD24076F95003653F4 /* User.swift */; };
+		A7C102C0240840F9003653F4 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C102BF240840F9003653F4 /* Chat.swift */; };
+		A7C102C224084102003653F4 /* Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C102C124084102003653F4 /* Child.swift */; };
+		A7C102C42408439B003653F4 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C102C32408439B003653F4 /* Message.swift */; };
 		A7D78E4F2405BDB100138B2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D78E4E2405BDB100138B2F /* AppDelegate.swift */; };
 		A7D78E512405BDB100138B2F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D78E502405BDB100138B2F /* SceneDelegate.swift */; };
 		A7D78E532405BDB100138B2F /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D78E522405BDB100138B2F /* WelcomeViewController.swift */; };
@@ -28,6 +31,9 @@
 		6BB781AEACA08E107AE79406 /* Pods-OneMomForAll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneMomForAll.release.xcconfig"; path = "Target Support Files/Pods-OneMomForAll/Pods-OneMomForAll.release.xcconfig"; sourceTree = "<group>"; };
 		A7AA02BC240608880076CB25 /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
 		A7C102BD24076F95003653F4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A7C102BF240840F9003653F4 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		A7C102C124084102003653F4 /* Child.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Child.swift; sourceTree = "<group>"; };
+		A7C102C32408439B003653F4 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		A7D78E4B2405BDB100138B2F /* OMFA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OMFA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D78E4E2405BDB100138B2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7D78E502405BDB100138B2F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +73,9 @@
 			isa = PBXGroup;
 			children = (
 				A7C102BD24076F95003653F4 /* User.swift */,
+				A7C102BF240840F9003653F4 /* Chat.swift */,
+				A7C102C124084102003653F4 /* Child.swift */,
+				A7C102C32408439B003653F4 /* Message.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -253,9 +262,12 @@
 				A7D78E722405CDE500138B2F /* LoginViewController.swift in Sources */,
 				A7D78E682405C10100138B2F /* Constants.swift in Sources */,
 				A7D78E702405CDB100138B2F /* RegisterViewController.swift in Sources */,
+				A7C102C0240840F9003653F4 /* Chat.swift in Sources */,
 				A7C102BE24076F96003653F4 /* User.swift in Sources */,
+				A7C102C42408439B003653F4 /* Message.swift in Sources */,
 				A7D78E532405BDB100138B2F /* WelcomeViewController.swift in Sources */,
 				A7D78E4F2405BDB100138B2F /* AppDelegate.swift in Sources */,
+				A7C102C224084102003653F4 /* Child.swift in Sources */,
 				A7D78E512405BDB100138B2F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
