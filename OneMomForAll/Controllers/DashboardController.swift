@@ -11,20 +11,23 @@ import Firebase
 import RealmSwift
 
 class DashboardController: UIViewController {
-
-    var currUserEmail: String?
-    var user: Results<User>?
-    let realm = try! Realm() // Valid way of declaring for realm.
+        
     
-    
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var username: UILabel!
     
+    var currUserEmail: String?
+    var user: Results<User>?
+    var childList: Results<Child>?
+    let realm = try! Realm() // Valid way of declaring for realm.
+
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
         title = K.appName
         
         loadUserInfo()
+        setTableViewDelegates()
     }
     //MARK: - Log out
     @IBAction func logOutBtn(_ sender: UIButton) {
@@ -64,15 +67,50 @@ class DashboardController: UIViewController {
         }
         present(alert, animated: true, completion: nil)
     }
-    //MARK: - User Children List
-    // asdfasdf
-    // asdfasdf
-    
     
     //MARK: - Data Manipulation
     func loadUserInfo() {
         // Filter all except current user.
         user = realm.objects(User.self).filter("email CONTAINS[cd] %@", currUserEmail!)
         username.text = user?.first?.name
+    }    
+    
+    //MARK: - Children tableView
+    //    func configTableView() {
+//        view.addSubview(tableView)
+//        setTableViewDelegates()
+//        // Reusable cells
+//    }
+    
+    func setTableViewDelegates() {
+        tableView.delegate = self
+        tableView.dataSource = self
     }
+}
+
+extension DashboardController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return childList?.count ?? 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.childListCell, for: indexPath)
+//        cell.delegate = self
+        
+        if let child = childList?[indexPath.row] {
+            cell.textLabel?.text = "\(child.nickName)(\(child.gender)): \(child.age)"
+//            if let safeColor = UIColor(hexString: selectedCategory!.color)?.darken(byPercentage: CGFloat(indexPath.row) / CGFloat(todoItems!.count)) {
+//                cell.backgroundColor = safeColor
+//                // Lecture 291 - ChameleonFramework - contrast
+//                cell.textLabel?.textColor = ContrastColorOf(safeColor, returnFlat: true)
+//            }
+//
+//            //Ternary operator ==>
+//            cell.accessoryType = item.done ? .checkmark : .none
+        } else {
+            cell.textLabel?.text = "Add your child(ren) information"
+        }
+        
+        return cell
+    }        
 }

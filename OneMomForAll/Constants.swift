@@ -14,13 +14,14 @@ struct K {
     // without static -> I need: let contants = Constants()
     // with static -> I can: Constants.registerSegue
     static let appName = "One MOM👩🏽For ALL"
-    static let cellIdentifier = "ReusableCell"
+    static let childListCell = "ChildListCell"
     static let cellNibName = "MessageCell"
     static let registerComplete = "LoginVC"
     static let loginComplete = "LoginToDashboard"
     static let profile = "DashToProfile"
     static let parentsList = "DashToMap"
     static let chatList = "DashToChat"
+    static let addNewChild = "AddNewChild"
     
     struct BrandColors {
         static let purple = "BrandPurple"

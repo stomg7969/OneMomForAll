@@ -201,17 +201,47 @@
                                     <action selector="updateProfileBtn:" destination="54z-nW-dYw" eventType="touchUpInside" id="h3S-84-5M9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJA-ZR-NtQ">
-                                <rect key="frame" x="77" y="315" width="168" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <state key="normal" title="Kids Profile">
-                                    <color key="titleColor" red="1" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="eU2-Eg-sVM" kind="show" identifier="DashToProfile" id="vAb-Vx-BFT"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Feq-hg-1kI" userLabel="Child Stack View">
+                                <rect key="frame" x="55" y="185" width="304" height="54"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Children" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjI-SV-WO2">
+                                        <rect key="frame" x="0.0" y="0.0" width="145" height="54"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="35"/>
+                                        <color key="textColor" red="1" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8XD-oO-6uw">
+                                        <rect key="frame" x="145" y="0.0" width="159" height="54"/>
+                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="35"/>
+                                        <state key="normal" title="+">
+                                            <color key="titleColor" red="1" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="ECg-GD-n1n" kind="presentation" identifier="AddNewChild" id="CEX-we-E8X"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="H5S-Yu-6VO" userLabel="Child List Table View">
+                                <rect key="frame" x="20" y="259" width="374" height="315"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="315" id="wHL-wO-89U"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChildListCell" id="k3r-e9-pn5">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="k3r-e9-pn5" id="eJ4-81-bc9">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="eU2-Eg-sVM" kind="show" identifier="DashToProfile" id="dlm-i7-lZD"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="9RP-7N-y1R" userLabel="BotBtns Stack View">
                                 <rect key="frame" x="20" y="762" width="374" height="100"/>
                                 <subviews>
@@ -272,13 +302,20 @@
                         </subviews>
                         <color key="backgroundColor" red="0.080323077739999998" green="0.21182638409999999" blue="0.2289803624" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="H5S-Yu-6VO" firstAttribute="leading" secondItem="hxb-Py-n7d" secondAttribute="leading" constant="20" symbolic="YES" id="H4S-PX-s5U"/>
+                            <constraint firstItem="Feq-hg-1kI" firstAttribute="top" secondItem="Oka-0u-0Xi" secondAttribute="bottom" constant="30" id="Hej-ld-Ntl"/>
+                            <constraint firstAttribute="trailing" secondItem="H5S-Yu-6VO" secondAttribute="trailing" constant="20" symbolic="YES" id="JJw-Ik-Kp4"/>
                             <constraint firstItem="Oka-0u-0Xi" firstAttribute="top" secondItem="jrM-Dz-d9g" secondAttribute="top" constant="25" id="N8B-Ud-JOV"/>
                             <constraint firstItem="iRv-Uq-zGg" firstAttribute="top" secondItem="jrM-Dz-d9g" secondAttribute="top" constant="25" id="O2q-0g-0vf"/>
                             <constraint firstItem="jrM-Dz-d9g" firstAttribute="bottom" secondItem="9RP-7N-y1R" secondAttribute="bottom" id="Q2w-j0-gLh"/>
+                            <constraint firstItem="iRv-Uq-zGg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Oka-0u-0Xi" secondAttribute="trailing" constant="8" symbolic="YES" id="Uip-UU-1vQ"/>
                             <constraint firstAttribute="trailing" secondItem="9RP-7N-y1R" secondAttribute="trailing" constant="20" symbolic="YES" id="X1V-oG-h4L"/>
+                            <constraint firstItem="H5S-Yu-6VO" firstAttribute="top" secondItem="Feq-hg-1kI" secondAttribute="bottom" constant="20" id="apr-Fe-Wm4"/>
                             <constraint firstItem="9RP-7N-y1R" firstAttribute="leading" secondItem="hxb-Py-n7d" secondAttribute="leading" constant="20" symbolic="YES" id="iou-GG-AlY"/>
+                            <constraint firstItem="Feq-hg-1kI" firstAttribute="leading" secondItem="hxb-Py-n7d" secondAttribute="leadingMargin" constant="35" id="oBv-5V-SYX"/>
                             <constraint firstItem="jrM-Dz-d9g" firstAttribute="trailing" secondItem="iRv-Uq-zGg" secondAttribute="trailing" constant="20" id="sMc-1j-IDq"/>
                             <constraint firstItem="Oka-0u-0Xi" firstAttribute="leading" secondItem="jrM-Dz-d9g" secondAttribute="leading" constant="20" id="uFb-qv-63l"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Feq-hg-1kI" secondAttribute="trailing" constant="35" id="zdh-lJ-4Kx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jrM-Dz-d9g"/>
                     </view>
@@ -295,6 +332,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="tableView" destination="H5S-Yu-6VO" id="r8y-DD-QOY"/>
                         <outlet property="username" destination="Oka-0u-0Xi" id="iXZ-io-sEa"/>
                     </connections>
                 </viewController>
@@ -302,10 +340,10 @@
             </objects>
             <point key="canvasLocation" x="3240.579710144928" y="118.52678571428571"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Child DetailTVC-->
         <scene sceneID="EGQ-Wm-b66">
             <objects>
-                <tableViewController id="eU2-Eg-sVM" sceneMemberID="viewController">
+                <tableViewController id="eU2-Eg-sVM" customClass="ChildDetailTVC" customModule="OMFA" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0Ug-i7-FNG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -329,12 +367,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YzX-e4-3yd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3243" y="914"/>
+            <point key="canvasLocation" x="4374" y="119"/>
         </scene>
-        <!--Table View Controller-->
+        <!--LocationTVC-->
         <scene sceneID="5M4-dt-6FD">
             <objects>
-                <tableViewController id="dzv-5c-D3r" sceneMemberID="viewController">
+                <tableViewController id="dzv-5c-D3r" customClass="LocationTVC" customModule="OMFA" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="m2q-k9-Jaq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -358,12 +396,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="toC-sM-KdF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4462" y="453"/>
+            <point key="canvasLocation" x="3241" y="880"/>
         </scene>
-        <!--Table View Controller-->
+        <!--ChatTVC-->
         <scene sceneID="kYJ-z9-7Bb">
             <objects>
-                <tableViewController id="cUm-wy-HLR" sceneMemberID="viewController">
+                <tableViewController id="cUm-wy-HLR" customClass="ChatTVC" customModule="OMFA" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wkR-FM-c8G">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -387,7 +425,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vcb-mt-QYf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4462" y="-291"/>
+            <point key="canvasLocation" x="4375" y="880"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="9Kv-5r-NgW">
@@ -492,6 +530,35 @@
             </objects>
             <point key="canvasLocation" x="2071.0144927536235" y="-290.625"/>
         </scene>
+        <!--New ChildVC-->
+        <scene sceneID="I5Y-zF-1ZK">
+            <objects>
+                <viewController id="ECg-GD-n1n" customClass="NewChildVC" customModule="OMFA" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hte-Ht-bU2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hky-rK-fLe">
+                                <rect key="frame" x="105" y="190" width="162" height="177"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">add new child
+- Add Picture
+- NickName
+- Age
+- Gender</string>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <color key="textColor" red="1" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.080323077739999998" green="0.21182638409999999" blue="0.2289803624" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="APG-be-9ZY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mXA-71-yqW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4373.913043478261" y="-695.08928571428567"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="FcS-Qn-HVy">
             <objects>
@@ -524,7 +591,7 @@
         <image name="textfield" width="298" height="93"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4DH-al-Kcv"/>
-        <segue reference="n8x-RD-Pk8"/>
+        <segue reference="LRj-tS-fHo"/>
+        <segue reference="mZ0-Ru-XA1"/>
     </inferredMetricsTieBreakers>
 </document>

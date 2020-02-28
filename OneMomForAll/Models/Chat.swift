@@ -11,6 +11,10 @@ import RealmSwift
 
 class Chat: Object {
     @objc dynamic var title: String = ""
+    @objc dynamic var preview: String {
+        return messages.last?.body ?? ""
+    }
+    // Also add new message preview. e.g. @objc dynamic var preview: String = messages.last.body
     
     let messages = List<Message>()
     var parentUser = LinkingObjects(fromType: User.self, property: "chats")
