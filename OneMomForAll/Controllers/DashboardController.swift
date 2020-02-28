@@ -94,7 +94,7 @@ extension DashboardController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.childListCell, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.reusingCell, for: indexPath)
 //        cell.delegate = self
         
         if let child = childList?[indexPath.row] {
