@@ -9,7 +9,7 @@
 import UIKit
 import CLTypingLabel
 
-class WelcomeViewController: UIViewController {
+class WelcomeVC: UIViewController {
     
     @IBOutlet weak var welcomeLabel: CLTypingLabel!
     

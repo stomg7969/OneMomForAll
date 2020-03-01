@@ -10,24 +10,38 @@ import UIKit
 import Firebase
 import RealmSwift
 
-class DashboardController: UIViewController {
-        
+class DashboardVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var username: UILabel!
     
-    var currUserEmail: String?
-    var user: Results<User>?
+    var currUser: User? {
+        didSet {
+            loadChildList()
+        }
+    }
     var childList: Results<Child>?
     let realm = try! Realm() // Valid way of declaring for realm.
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewConfiguration()
+        setTableViewDelegates()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        tableView?.reloadData()
+    }
+    
+    func viewConfiguration() {
         navigationItem.hidesBackButton = true
         title = K.appName
-        
-        loadUserInfo()
-        setTableViewDelegates()
+        username.text = currUser?.name
+    }
+    
+    func setTableViewDelegates() {
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     //MARK: - Log out
     @IBAction func logOutBtn(_ sender: UIButton) {
@@ -51,9 +65,9 @@ class DashboardController: UIViewController {
             
             do {
                 try self.realm.write {
-                    self.user?.first?.name = textField.text!
+                    self.currUser?.name = textField.text!
                     self.username.text = textField.text!
-                    self.user?.first?.nameUpdated = true
+                    self.currUser?.nameUpdated = true
                 }
             } catch {
                 print("Error updating user's nickname, \(error)")
@@ -69,44 +83,42 @@ class DashboardController: UIViewController {
     }
     
     //MARK: - Data Manipulation
-    func loadUserInfo() {
-        // Filter all except current user.
-        user = realm.objects(User.self).filter("email CONTAINS[cd] %@", currUserEmail!)
-        username.text = user?.first?.name
-    }    
-    
+    func loadChildList() {
+        childList = currUser?.children.sorted(byKeyPath: "age", ascending: true)
+//        tableView?.reloadData()
+    }
+    //MARK: - Add Child    
+    @IBAction func newChildBtn(_ sender: UIButton) {
+        performSegue(withIdentifier: K.addNewChild, sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            let destinationVC = segue.destination as! NewChildVC
+            // Send over logged in user's email to filter out other than current user.
+            destinationVC.currentUser = currUser
+    }
     //MARK: - Children tableView
     //    func configTableView() {
-//        view.addSubview(tableView)
+//        view.addSubview(tableView) // .addSubview for visualizing. Unnecessary for me.
 //        setTableViewDelegates()
 //        // Reusable cells
 //    }
-    
-    func setTableViewDelegates() {
-        tableView.delegate = self
-        tableView.dataSource = self
-    }
 }
 
-extension DashboardController: UITableViewDelegate, UITableViewDataSource {
+extension DashboardVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return childList?.count ?? 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.reusingCell, for: indexPath)
-//        cell.delegate = self
         
         if let child = childList?[indexPath.row] {
-            cell.textLabel?.text = "\(child.nickName)(\(child.gender)): \(child.age)"
+            cell.textLabel?.text = "\(child.nickName): \(child.gender)(\(child.age))"
 //            if let safeColor = UIColor(hexString: selectedCategory!.color)?.darken(byPercentage: CGFloat(indexPath.row) / CGFloat(todoItems!.count)) {
 //                cell.backgroundColor = safeColor
 //                // Lecture 291 - ChameleonFramework - contrast
 //                cell.textLabel?.textColor = ContrastColorOf(safeColor, returnFlat: true)
 //            }
-//
-//            //Ternary operator ==>
-//            cell.accessoryType = item.done ? .checkmark : .none
         } else {
             cell.textLabel?.text = "Add your child(ren) information"
         }

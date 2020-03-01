@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import RealmSwift
 
-class RegisterViewController: UIViewController {
+class RegisterVC: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var pwTextField: UITextField!

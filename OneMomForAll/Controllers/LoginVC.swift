@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import RealmSwift
 import Firebase
 
-class LoginViewController: UIViewController {
+class LoginVC: UIViewController {
 
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var pwField: UITextField!
+    
+    let realm = try! Realm() // Valid way of declaring for realm.
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,8 +39,8 @@ class LoginViewController: UIViewController {
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as! DashboardController
-        // Send over logged in user's email to filter out other than current user.
-        destinationVC.currUserEmail = emailField.text!
+        let destinationVC = segue.destination as! DashboardVC
+        // Send over only the current user information.
+        destinationVC.currUser = realm.objects(User.self).filter("email CONTAINS[cd] %@", emailField.text!).first
     }
 }
