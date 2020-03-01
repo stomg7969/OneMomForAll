@@ -22,11 +22,9 @@ struct K {
     static let chatList = "DashToChat"
     static let addNewChild = "AddNewChild"
     
-    struct BrandColors {
-        static let purple = "BrandPurple"
-        static let lightPurple = "BrandLightPurple"
-        static let blue = "BrandBlue"
-        static let lighBlue = "BrandLightBlue"
+    struct C {
+        static let pink = "FFB5B5"
+        static let green = "14363A"
     }
     
     struct FStore {

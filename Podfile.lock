@@ -251,12 +251,14 @@ PODS:
   - Realm/Headers (4.3.2)
   - RealmSwift (4.3.2):
     - Realm (= 4.3.2)
+  - SwiftHEXColors (1.3.1)
 
 DEPENDENCIES:
   - CLTypingLabel
   - Firebase/Auth
   - Firebase/Firestore
   - RealmSwift
+  - SwiftHEXColors
 
 SPEC REPOS:
   trunk:
@@ -280,6 +282,7 @@ SPEC REPOS:
     - nanopb
     - Realm
     - RealmSwift
+    - SwiftHEXColors
 
 SPEC CHECKSUMS:
   abseil: 18063d773f5366ff8736a050fe035a28f635fd27
@@ -302,7 +305,8 @@ SPEC CHECKSUMS:
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   Realm: 5e92902e2875dff4bb0fd02f67bb737c3d5db2bc
   RealmSwift: 9a360fc7bae04fc2e308a34fbd899d5faa2d6b22
+  SwiftHEXColors: 7cc78ce189ddaff81f2ec1259b6b1dffdcda7643
 
-PODFILE CHECKSUM: 95a75ae98bf63582200d1825078382fc0e95f865
+PODFILE CHECKSUM: d499b5cc0a7987a9a3edfa1260f3dbc5cdc8c395
 
 COCOAPODS: 1.8.4

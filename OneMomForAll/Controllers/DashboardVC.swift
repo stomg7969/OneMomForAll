@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import RealmSwift
+import SwiftHEXColors
 
 class DashboardVC: UIViewController {
     
@@ -34,6 +35,9 @@ class DashboardVC: UIViewController {
     }
     
     func viewConfiguration() {
+        tableView.backgroundColor = UIColor.clear
+        tableView.rowHeight = 80
+        
         navigationItem.hidesBackButton = true
         title = K.appName
         username.text = currUser?.name
@@ -111,6 +115,8 @@ extension DashboardVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.reusingCell, for: indexPath)
+        // Cell coloring
+        cellDesignConfiguration(cell)
         
         if let child = childList?[indexPath.row] {
             cell.textLabel?.text = "\(child.nickName): \(child.gender)(\(child.age))"
@@ -124,5 +130,13 @@ extension DashboardVC: UITableViewDelegate, UITableViewDataSource {
         }
         
         return cell
-    }        
+    }
+    
+    func cellDesignConfiguration(_ cell: UITableViewCell) {
+        cell.layer.borderColor = UIColor(hexString: K.C.green)?.cgColor
+        cell.layer.borderWidth = 10.0
+        cell.backgroundColor = UIColor(hexString: K.C.pink)
+        cell.textLabel?.textColor = UIColor(hexString: K.C.green)
+        cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 20.0)
+    }
 }
