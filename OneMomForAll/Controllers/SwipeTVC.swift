@@ -12,6 +12,8 @@ import SwipeCellKit
 class SwipeTVC: UITableViewController, SwipeTableViewCellDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewConfiguration()
     }
     // DashboardVC can't inherit this class because it's UIVC not UITVC.
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -20,6 +22,12 @@ class SwipeTVC: UITableViewController, SwipeTableViewCellDelegate {
         
         cell.delegate = self
         return cell
+    }
+    
+    func viewConfiguration() {
+//        tableView.backgroundColor = UIColor.clear
+        tableView.backgroundColor = UIColor(hexString: K.C.green)
+        tableView.rowHeight = 80
     }
 
     //MARK: - SwipeCellKit pod

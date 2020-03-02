@@ -94,7 +94,7 @@ class DashboardVC: UIViewController {
     }
     //MARK: - Navigation Btns
     @IBAction func newChildBtn(_ sender: UIButton) {
-        performSegue(withIdentifier: K.addNewChild, sender: self)
+        performSegue(withIdentifier: K.childForm, sender: self)
     }
     @IBAction func locationViewBtn(_ sender: UIButton) {
         performSegue(withIdentifier: K.locationList, sender: self)
@@ -146,29 +146,25 @@ extension DashboardVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: K.profile, sender: self)
+//        tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: K.childForm, sender: self)
     }
     //MARK: - Segue Prepare
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == K.addNewChild {
-            let destinationVC = segue.destination as! NewChildVC
+        if segue.identifier == K.childForm {
+            let destinationVC = segue.destination as! ChildFormVC
             // Send over logged in user's email to filter out other than current user.
             destinationVC.currentUser = currUser
-            
-        } else if segue.identifier == K.profile {
-            let destinationVC = segue.destination as! ChildDetailTVC
-            
             if let indexPath = tableView.indexPathForSelectedRow {
-                // ...
-//                destinationVC.currChild = childList?[indexPath.row]
+                destinationVC.currentChild = childList?[indexPath.row]
             }
-        
+            
         } else if segue.identifier == K.locationList {
-            let destinationVC = segue.destination as! LocationTVC
+//            let destinationVC = segue.destination as! LocationTVC
             
             
         } else if segue.identifier == K.chatList {
-            let destinationVC = segue.destination as! ChatTVC
+//            let destinationVC = segue.destination as! ChatTVC
         }
     }
 }

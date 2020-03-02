@@ -14,8 +14,7 @@
 		A7C102C0240840F9003653F4 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C102BF240840F9003653F4 /* Chat.swift */; };
 		A7C102C224084102003653F4 /* Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C102C124084102003653F4 /* Child.swift */; };
 		A7C102C42408439B003653F4 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C102C32408439B003653F4 /* Message.swift */; };
-		A7C102C624089544003653F4 /* NewChildVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C102C524089544003653F4 /* NewChildVC.swift */; };
-		A7C102C8240895D6003653F4 /* ChildDetailTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C102C7240895D6003653F4 /* ChildDetailTVC.swift */; };
+		A7C102C624089544003653F4 /* ChildFormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C102C524089544003653F4 /* ChildFormVC.swift */; };
 		A7C102CA240895FF003653F4 /* LocationTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C102C9240895FF003653F4 /* LocationTVC.swift */; };
 		A7C102CC24089647003653F4 /* ChatTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C102CB24089647003653F4 /* ChatTVC.swift */; };
 		A7C102CF240896F2003653F4 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C102CD240896F2003653F4 /* MessageCell.swift */; };
@@ -42,8 +41,7 @@
 		A7C102BF240840F9003653F4 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		A7C102C124084102003653F4 /* Child.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Child.swift; sourceTree = "<group>"; };
 		A7C102C32408439B003653F4 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		A7C102C524089544003653F4 /* NewChildVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewChildVC.swift; sourceTree = "<group>"; };
-		A7C102C7240895D6003653F4 /* ChildDetailTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildDetailTVC.swift; sourceTree = "<group>"; };
+		A7C102C524089544003653F4 /* ChildFormVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildFormVC.swift; sourceTree = "<group>"; };
 		A7C102C9240895FF003653F4 /* LocationTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTVC.swift; sourceTree = "<group>"; };
 		A7C102CB24089647003653F4 /* ChatTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTVC.swift; sourceTree = "<group>"; };
 		A7C102CD240896F2003653F4 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
@@ -146,8 +144,7 @@
 				A7D78E6F2405CDB100138B2F /* RegisterVC.swift */,
 				A7D78E712405CDE500138B2F /* LoginVC.swift */,
 				A7AA02BC240608880076CB25 /* DashboardVC.swift */,
-				A7C102C524089544003653F4 /* NewChildVC.swift */,
-				A7C102C7240895D6003653F4 /* ChildDetailTVC.swift */,
+				A7C102C524089544003653F4 /* ChildFormVC.swift */,
 				A7C102C9240895FF003653F4 /* LocationTVC.swift */,
 				A7C102CB24089647003653F4 /* ChatTVC.swift */,
 				A794A3C2240D8E630079E2A6 /* SwipeTVC.swift */,
@@ -289,8 +286,7 @@
 				A794A3C3240D8E630079E2A6 /* SwipeTVC.swift in Sources */,
 				A7C102C0240840F9003653F4 /* Chat.swift in Sources */,
 				A7C102BE24076F96003653F4 /* User.swift in Sources */,
-				A7C102C8240895D6003653F4 /* ChildDetailTVC.swift in Sources */,
-				A7C102C624089544003653F4 /* NewChildVC.swift in Sources */,
+				A7C102C624089544003653F4 /* ChildFormVC.swift in Sources */,
 				A7C102CA240895FF003653F4 /* LocationTVC.swift in Sources */,
 				A7C102C42408439B003653F4 /* Message.swift in Sources */,
 				A7D78E532405BDB100138B2F /* WelcomeVC.swift in Sources */,

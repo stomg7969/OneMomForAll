@@ -17,17 +17,16 @@ struct K {
     static let reusingCell = "Cell"
     static let registerComplete = "LoginVC"
     static let loginComplete = "LoginToDashboard"
-    static let profile = "DashToProfile"
     static let locationList = "DashToMap"
     static let chatList = "DashToChat"
-    static let addNewChild = "AddNewChild"
+    static let childForm = "SubmitChildForm"
     
     struct C {
         static let pink = "FFB5B5"
         static let green = "14363A"
     }
     
-    struct FStore {
+    struct FS {
         static let collectionName = "messages"
         static let senderField = "sender"
         static let bodyField = "body"

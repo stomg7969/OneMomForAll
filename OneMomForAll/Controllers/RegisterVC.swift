@@ -50,13 +50,15 @@ class RegisterVC: UIViewController {
                     self.saveUser(newUser)
                     
                     let alert = UIAlertController(title: "Success", message: "Welcome! You can Log In now.", preferredStyle: .alert)
-                    let cancel = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+//                    let cancel = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+                    let cancel = UIAlertAction(title: "Ok", style: .cancel) { (action) in
+                        // Navigate back to welcome VC
+                        //                    self.dismiss(animated: true, completion: nil)
+                        //                    self.performSegue(withIdentifier: K.registerComplete, sender: self)
+                        self.navigationController?.popToRootViewController(animated: true)
+                    }
                     alert.addAction(cancel)
                     self.present(alert, animated: true, completion: nil)
-                    // Navigate back to welcome VC
-//                    self.dismiss(animated: true, completion: nil)
-//                    self.performSegue(withIdentifier: K.registerComplete, sender: self)
-                    self.navigationController?.popToRootViewController(animated: true)
                 }
             }
         }

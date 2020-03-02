@@ -332,44 +332,14 @@
                     <connections>
                         <outlet property="tableView" destination="H5S-Yu-6VO" id="r8y-DD-QOY"/>
                         <outlet property="username" destination="Oka-0u-0Xi" id="iXZ-io-sEa"/>
-                        <segue destination="ECg-GD-n1n" kind="show" identifier="AddNewChild" id="6rv-eb-7a5"/>
-                        <segue destination="eU2-Eg-sVM" kind="show" identifier="DashToProfile" id="6gt-jO-ikM"/>
+                        <segue destination="ECg-GD-n1n" kind="show" identifier="SubmitChildForm" id="6rv-eb-7a5"/>
                         <segue destination="cUm-wy-HLR" kind="show" identifier="DashToChat" id="wug-7M-RbA"/>
                         <segue destination="dzv-5c-D3r" kind="show" identifier="DashToMap" id="RKQ-g4-UMn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9a4-IC-1nO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3240.579710144928" y="118.52678571428571"/>
-        </scene>
-        <!--Child DetailTVC-->
-        <scene sceneID="EGQ-Wm-b66">
-            <objects>
-                <tableViewController id="eU2-Eg-sVM" customClass="ChildDetailTVC" customModule="OMFA" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0Ug-i7-FNG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Z1v-O7-tpj">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Z1v-O7-tpj" id="fZr-JR-TL4">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="eU2-Eg-sVM" id="KDF-Ve-wfN"/>
-                            <outlet property="delegate" destination="eU2-Eg-sVM" id="6TE-bY-ke2"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="drN-EL-Mqu"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YzX-e4-3yd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4374" y="119"/>
+            <point key="canvasLocation" x="3071" y="453"/>
         </scene>
         <!--LocationTVC-->
         <scene sceneID="5M4-dt-6FD">
@@ -398,7 +368,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="toC-sM-KdF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3241" y="880"/>
+            <point key="canvasLocation" x="2578" y="1207"/>
         </scene>
         <!--ChatTVC-->
         <scene sceneID="kYJ-z9-7Bb">
@@ -427,7 +397,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vcb-mt-QYf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4375" y="880"/>
+            <point key="canvasLocation" x="3594" y="1207"/>
         </scene>
         <!--RegisterVC-->
         <scene sceneID="9Kv-5r-NgW">
@@ -534,10 +504,10 @@
             </objects>
             <point key="canvasLocation" x="2071.0144927536235" y="-290.625"/>
         </scene>
-        <!--New ChildVC-->
+        <!--Child FormVC-->
         <scene sceneID="I5Y-zF-1ZK">
             <objects>
-                <viewController id="ECg-GD-n1n" customClass="NewChildVC" customModule="OMFA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ECg-GD-n1n" customClass="ChildFormVC" customModule="OMFA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hte-Ht-bU2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -647,7 +617,7 @@
                                     <color key="titleColor" red="0.080323077739999998" green="0.21182638409999999" blue="0.2289803624" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="createChildBtn:" destination="ECg-GD-n1n" eventType="touchUpInside" id="cCN-Hz-wST"/>
+                                    <action selector="submitFormBtn:" destination="ECg-GD-n1n" eventType="touchUpInside" id="cCN-Hz-wST"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -671,15 +641,17 @@
                     <connections>
                         <outlet property="ageTxtField" destination="s3K-dB-LxQ" id="3oO-ZU-IVw"/>
                         <outlet property="femaleBtn" destination="NPC-pA-ENN" id="Hnx-o2-elB"/>
+                        <outlet property="formBtn" destination="vau-80-KYR" id="MfA-IX-ES5"/>
                         <outlet property="maleBtn" destination="tUR-r9-bYb" id="obx-bd-6Ws"/>
                         <outlet property="monthBtn" destination="GBR-b3-YPS" id="E6w-T6-Y6W"/>
                         <outlet property="nameTxtField" destination="NIE-H8-eZE" id="CWr-ih-Vtx"/>
+                        <outlet property="pageLabel" destination="H60-zd-9YH" id="GRa-Wj-omK"/>
                         <outlet property="yearBtn" destination="Mey-Yu-XEk" id="a0c-fc-xxF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mXA-71-yqW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4373.913043478261" y="-695.08928571428567"/>
+            <point key="canvasLocation" x="4100" y="453"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FcS-Qn-HVy">
