@@ -19,5 +19,7 @@ target 'OneMomForAll' do
   pod 'Firebase/Firestore'
   
   pod 'SwiftHEXColors'
+  
+  pod 'SwipeCellKit'
 
 end

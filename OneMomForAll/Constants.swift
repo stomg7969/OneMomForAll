@@ -18,7 +18,7 @@ struct K {
     static let registerComplete = "LoginVC"
     static let loginComplete = "LoginToDashboard"
     static let profile = "DashToProfile"
-    static let parentsList = "DashToMap"
+    static let locationList = "DashToMap"
     static let chatList = "DashToChat"
     static let addNewChild = "AddNewChild"
     

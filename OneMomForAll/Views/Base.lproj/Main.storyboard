@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One MOM For ALL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hg-YP-q4s" customClass="CLTypingLabel" customModule="CLTypingLabel">
-                                <rect key="frame" x="207" y="448" width="0.0" height="0.0"/>
+                                <rect key="frame" x="60.5" y="427" width="293" height="42"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                 <color key="textColor" red="1" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -229,16 +229,13 @@
                                     <constraint firstAttribute="height" constant="315" id="wHL-wO-89U"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="k3r-e9-pn5">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="k3r-e9-pn5" customClass="SwipeTableViewCell" customModule="SwipeCellKit">
                                         <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="k3r-e9-pn5" id="eJ4-81-bc9">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="eU2-Eg-sVM" kind="show" identifier="DashToProfile" id="dlm-i7-lZD"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -253,7 +250,7 @@
                                                 <color key="tintColor" red="1" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="location.circle" catalog="system"/>
                                                 <connections>
-                                                    <segue destination="dzv-5c-D3r" kind="show" identifier="DashToMap" id="mZ0-Ru-XA1"/>
+                                                    <action selector="locationViewBtn:" destination="54z-nW-dYw" eventType="touchUpInside" id="Q4q-tb-PkU"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xrx-SE-2he">
@@ -264,7 +261,7 @@
                                                     <color key="titleColor" red="1" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="dzv-5c-D3r" kind="show" identifier="DashToMap" id="n8x-RD-Pk8"/>
+                                                    <action selector="locationViewBtn:" destination="54z-nW-dYw" eventType="touchUpInside" id="NZd-Ku-suv"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -278,7 +275,7 @@
                                                 <color key="tintColor" red="1" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="text.bubble" catalog="system"/>
                                                 <connections>
-                                                    <segue destination="cUm-wy-HLR" kind="show" identifier="DashToChat" id="4DH-al-Kcv"/>
+                                                    <action selector="chatViewBtn:" destination="54z-nW-dYw" eventType="touchUpInside" id="M1r-Df-gKn"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bw4-Ea-bZx">
@@ -289,7 +286,7 @@
                                                     <color key="titleColor" red="1" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="cUm-wy-HLR" kind="show" identifier="DashToChat" id="LRj-tS-fHo"/>
+                                                    <action selector="chatViewBtn:" destination="54z-nW-dYw" eventType="touchUpInside" id="r70-Ch-B06"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -336,6 +333,9 @@
                         <outlet property="tableView" destination="H5S-Yu-6VO" id="r8y-DD-QOY"/>
                         <outlet property="username" destination="Oka-0u-0Xi" id="iXZ-io-sEa"/>
                         <segue destination="ECg-GD-n1n" kind="show" identifier="AddNewChild" id="6rv-eb-7a5"/>
+                        <segue destination="eU2-Eg-sVM" kind="show" identifier="DashToProfile" id="6gt-jO-ikM"/>
+                        <segue destination="cUm-wy-HLR" kind="show" identifier="DashToChat" id="wug-7M-RbA"/>
+                        <segue destination="dzv-5c-D3r" kind="show" identifier="DashToMap" id="RKQ-g4-UMn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9a4-IC-1nO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -714,8 +714,4 @@
         <image name="text.bubble" catalog="system" width="64" height="54"/>
         <image name="textfield" width="298" height="93"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="LRj-tS-fHo"/>
-        <segue reference="n8x-RD-Pk8"/>
-    </inferredMetricsTieBreakers>
 </document>

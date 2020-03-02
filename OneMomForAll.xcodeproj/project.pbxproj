@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		09A8FF3653A2DACBFEB38B11 /* Pods_OneMomForAll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3601B2B1C04BB7B6B3072037 /* Pods_OneMomForAll.framework */; };
+		A794A3C3240D8E630079E2A6 /* SwipeTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794A3C2240D8E630079E2A6 /* SwipeTVC.swift */; };
 		A7AA02BD240608880076CB25 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AA02BC240608880076CB25 /* DashboardVC.swift */; };
 		A7C102BE24076F96003653F4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C102BD24076F95003653F4 /* User.swift */; };
 		A7C102C0240840F9003653F4 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C102BF240840F9003653F4 /* Chat.swift */; };
@@ -35,6 +36,7 @@
 		1983A492A8B1E2787DDD94B2 /* Pods-OneMomForAll.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneMomForAll.debug.xcconfig"; path = "Target Support Files/Pods-OneMomForAll/Pods-OneMomForAll.debug.xcconfig"; sourceTree = "<group>"; };
 		3601B2B1C04BB7B6B3072037 /* Pods_OneMomForAll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneMomForAll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BB781AEACA08E107AE79406 /* Pods-OneMomForAll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneMomForAll.release.xcconfig"; path = "Target Support Files/Pods-OneMomForAll/Pods-OneMomForAll.release.xcconfig"; sourceTree = "<group>"; };
+		A794A3C2240D8E630079E2A6 /* SwipeTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTVC.swift; sourceTree = "<group>"; };
 		A7AA02BC240608880076CB25 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
 		A7C102BD24076F95003653F4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A7C102BF240840F9003653F4 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				A7C102C7240895D6003653F4 /* ChildDetailTVC.swift */,
 				A7C102C9240895FF003653F4 /* LocationTVC.swift */,
 				A7C102CB24089647003653F4 /* ChatTVC.swift */,
+				A794A3C2240D8E630079E2A6 /* SwipeTVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				A7D78E682405C10100138B2F /* Constants.swift in Sources */,
 				A7D78E702405CDB100138B2F /* RegisterVC.swift in Sources */,
 				A7C102CC24089647003653F4 /* ChatTVC.swift in Sources */,
+				A794A3C3240D8E630079E2A6 /* SwipeTVC.swift in Sources */,
 				A7C102C0240840F9003653F4 /* Chat.swift in Sources */,
 				A7C102BE24076F96003653F4 /* User.swift in Sources */,
 				A7C102C8240895D6003653F4 /* ChildDetailTVC.swift in Sources */,

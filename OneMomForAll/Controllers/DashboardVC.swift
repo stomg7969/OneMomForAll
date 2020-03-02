@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import RealmSwift
 import SwiftHEXColors
+import SwipeCellKit
 
 class DashboardVC: UIViewController {
     
@@ -91,15 +92,18 @@ class DashboardVC: UIViewController {
         childList = currUser?.children.sorted(byKeyPath: "age", ascending: true)
 //        tableView?.reloadData()
     }
-    //MARK: - Add Child    
+    //MARK: - Navigation Btns
     @IBAction func newChildBtn(_ sender: UIButton) {
         performSegue(withIdentifier: K.addNewChild, sender: self)
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            let destinationVC = segue.destination as! NewChildVC
-            // Send over logged in user's email to filter out other than current user.
-            destinationVC.currentUser = currUser
+    @IBAction func locationViewBtn(_ sender: UIButton) {
+        performSegue(withIdentifier: K.locationList, sender: self)
+    }    
+    @IBAction func chatViewBtn(_ sender: UIButton) {
+        performSegue(withIdentifier: K.chatList, sender: self)
     }
+    
+    
     //MARK: - Children tableView
     //    func configTableView() {
 //        view.addSubview(tableView) // .addSubview for visualizing. Unnecessary for me.
@@ -114,7 +118,8 @@ extension DashboardVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.reusingCell, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.reusingCell, for: indexPath) as! SwipeTableViewCell
+        cell.delegate = self
         // Cell coloring
         cellDesignConfiguration(cell)
         
@@ -138,5 +143,75 @@ extension DashboardVC: UITableViewDelegate, UITableViewDataSource {
         cell.backgroundColor = UIColor(hexString: K.C.pink)
         cell.textLabel?.textColor = UIColor(hexString: K.C.green)
         cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 20.0)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: K.profile, sender: self)
+    }
+    //MARK: - Segue Prepare
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == K.addNewChild {
+            let destinationVC = segue.destination as! NewChildVC
+            // Send over logged in user's email to filter out other than current user.
+            destinationVC.currentUser = currUser
+            
+        } else if segue.identifier == K.profile {
+            let destinationVC = segue.destination as! ChildDetailTVC
+            
+            if let indexPath = tableView.indexPathForSelectedRow {
+                // ...
+//                destinationVC.currChild = childList?[indexPath.row]
+            }
+        
+        } else if segue.identifier == K.locationList {
+            let destinationVC = segue.destination as! LocationTVC
+            
+            
+        } else if segue.identifier == K.chatList {
+            let destinationVC = segue.destination as! ChatTVC
+        }
+    }
+}
+//MARK: - Child SwipeCellKit
+// Can't separate this to SwipeTVC because this Controller is not a TVC.
+extension DashboardVC: SwipeTableViewCellDelegate {
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        guard orientation == .right else { return nil }
+        
+        let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
+            // handle action by updating model with deletion
+            self.updateModel(at: indexPath)
+        }
+        // customize the action appearance
+        if #available(iOS 13.0, *) {
+            deleteAction.image = UIImage(systemName: "trash.fill")
+        } else {
+            deleteAction.image = UIImage(named: "Trash Icon")
+        }
+        
+        return [deleteAction]
+    }    
+    // This method is for expansion style. e.g. swipe further to delete.
+    //     https://github.com/SwipeCellKit/SwipeCellKit
+    func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
+        var options = SwipeOptions()
+        options.expansionStyle = .destructive
+        return options
+    }
+    // Lecture 287 - deleting process for dynamic purpose.
+    func updateModel(at indexPath: IndexPath) {
+        print("Deleting Child: \(childList?[indexPath.row].nickName ?? "nothing")")
+        if let deletingChild = childList?[indexPath.row] {
+            do {
+                try realm.write {
+                    // Lecture 286 - <#D#> in CRUD - challenge
+                    realm.delete(deletingChild)
+                }
+            } catch {
+                print("Error deleting selected item, \(error)")
+            }
+            // .reloadData() is commented out because .expansionStyle = .destructive line from below method deletes it and auto-reloads..?
+            // tableView.reloadData()
+        }
     }
 }
