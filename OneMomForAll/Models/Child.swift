@@ -19,6 +19,13 @@ class Child: Object {
 //        // depending on m or y, calc the approximate age of this child.
 //        // return it as a string.
 //    }
+    /*
+     Declaring a primary key allows objects to be looked up and updated efficiently and enforces uniqueness for each value. Once an object with a primary key is added to a Realm, the primary key cannot be changed.
+     */
+//    @objc dynamic var id = 0
+//    override static func primaryKey() -> String? {
+//        return "id"
+//    }
     
     // how about just calculating the year. e.g. ask user to provide only the year children are born.
     

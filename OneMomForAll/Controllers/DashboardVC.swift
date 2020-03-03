@@ -105,11 +105,6 @@ class DashboardVC: UIViewController {
     
     
     //MARK: - Children tableView
-    //    func configTableView() {
-//        view.addSubview(tableView) // .addSubview for visualizing. Unnecessary for me.
-//        setTableViewDelegates()
-//        // Reusable cells
-//    }
 }
 
 extension DashboardVC: UITableViewDelegate, UITableViewDataSource {
@@ -125,11 +120,7 @@ extension DashboardVC: UITableViewDelegate, UITableViewDataSource {
         
         if let child = childList?[indexPath.row] {
             cell.textLabel?.text = "\(child.nickName): \(child.gender)(\(child.age))"
-//            if let safeColor = UIColor(hexString: selectedCategory!.color)?.darken(byPercentage: CGFloat(indexPath.row) / CGFloat(todoItems!.count)) {
-//                cell.backgroundColor = safeColor
-//                // Lecture 291 - ChameleonFramework - contrast
-//                cell.textLabel?.textColor = ContrastColorOf(safeColor, returnFlat: true)
-//            }
+            
         } else {
             cell.textLabel?.text = "Add your child(ren) information"
         }
@@ -206,7 +197,6 @@ extension DashboardVC: SwipeTableViewCellDelegate {
             } catch {
                 print("Error deleting selected item, \(error)")
             }
-            // .reloadData() is commented out because .expansionStyle = .destructive line from below method deletes it and auto-reloads..?
             // tableView.reloadData()
         }
     }
