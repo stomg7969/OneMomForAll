@@ -13,7 +13,8 @@ struct K {
     // with static, I don't have to initialize to call it.
     // without static -> I need: let contants = Constants()
     // with static -> I can: Constants.registerSegue
-    static let appName = "OMFA👩🏽"
+    static let appName = "One Mom👩🏽For All"
+    static let appNameInitial = "OMFA👩🏽"
     static let reusingCell = "Cell"
     static let registerComplete = "LoginVC"
     static let loginComplete = "LoginToDashboard"

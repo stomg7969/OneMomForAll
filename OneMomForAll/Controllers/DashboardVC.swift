@@ -40,7 +40,7 @@ class DashboardVC: UIViewController {
         tableView.rowHeight = 80
         
         navigationItem.hidesBackButton = true
-        title = K.appName
+        title = K.appNameInitial
         username.text = currUser?.name
     }
     
