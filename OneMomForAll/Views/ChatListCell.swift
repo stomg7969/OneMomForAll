@@ -1,24 +1,24 @@
 //
-//  MessageCell.swift
+//  ChatListCell.swift
 //  OneMomForAll
 //
-//  Created by K1 Park on 2/27/20.
+//  Created by K1 Park on 3/3/20.
 //  Copyright © 2020 K1 Park. All rights reserved.
 //
 
 import UIKit
-// Lecture 203.
-class MessageCell: UITableViewCell {
 
-    @IBOutlet weak var chatBox: UIView!
-    @IBOutlet weak var message: UILabel!
-    @IBOutlet weak var chatterName: UILabel!
+class ChatListCell: UITableViewCell {
+    
     @IBOutlet weak var chatterImage: UIImageView!
+    @IBOutlet weak var chatterName: UILabel!
+    @IBOutlet weak var chatPreview: UILabel!
+    @IBOutlet weak var time: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        chatBox.layer.cornerRadius = chatBox.frame.size.height / 5
+        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

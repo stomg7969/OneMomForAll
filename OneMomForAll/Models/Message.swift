@@ -12,6 +12,6 @@ import RealmSwift
 class Message: Object {
     @objc dynamic var sender: String = ""
     @objc dynamic var body: String = ""
-    
+    // add time message was created. (hh:mm AM/PM)
     var parentChat = LinkingObjects(fromType: Chat.self, property: "messages")
 }

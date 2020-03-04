@@ -14,7 +14,8 @@ class Chat: Object {
     @objc dynamic var preview: String {
         return messages.last?.body ?? ""
     }
-    // Also add new message preview. e.g. @objc dynamic var preview: String = messages.last.body
+    // Also add Date(yyyy/mm/dd) for section
+    // add time / yesterday / weekname / mm dd for preview.
     
     let messages = List<Message>()
     var parentUser = LinkingObjects(fromType: User.self, property: "chats")

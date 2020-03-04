@@ -21,7 +21,9 @@ struct K {
     static let locationList = "DashToMap"
     static let chatList = "DashToChat"
     static let childForm = "SubmitChildForm"
-    
+    static let chatListCell = "ChatListCell"
+    static let messageCell = "MessageCell"
+        
     struct C {
         static let pink = "FFB5B5"
         static let green = "14363A"

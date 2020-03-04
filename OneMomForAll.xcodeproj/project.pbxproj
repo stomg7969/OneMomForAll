@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		09A8FF3653A2DACBFEB38B11 /* Pods_OneMomForAll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3601B2B1C04BB7B6B3072037 /* Pods_OneMomForAll.framework */; };
 		A794A3C3240D8E630079E2A6 /* SwipeTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794A3C2240D8E630079E2A6 /* SwipeTVC.swift */; };
+		A794A3C5240F37530079E2A6 /* ChatRoomTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794A3C4240F37530079E2A6 /* ChatRoomTVC.swift */; };
+		A794A3C8240F38330079E2A6 /* ChatListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794A3C6240F38330079E2A6 /* ChatListCell.swift */; };
+		A794A3C9240F38330079E2A6 /* ChatListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A794A3C7240F38330079E2A6 /* ChatListCell.xib */; };
 		A7AA02BD240608880076CB25 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AA02BC240608880076CB25 /* DashboardVC.swift */; };
 		A7C102BE24076F96003653F4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C102BD24076F95003653F4 /* User.swift */; };
 		A7C102C0240840F9003653F4 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C102BF240840F9003653F4 /* Chat.swift */; };
@@ -16,7 +19,7 @@
 		A7C102C42408439B003653F4 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C102C32408439B003653F4 /* Message.swift */; };
 		A7C102C624089544003653F4 /* ChildFormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C102C524089544003653F4 /* ChildFormVC.swift */; };
 		A7C102CA240895FF003653F4 /* LocationTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C102C9240895FF003653F4 /* LocationTVC.swift */; };
-		A7C102CC24089647003653F4 /* ChatTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C102CB24089647003653F4 /* ChatTVC.swift */; };
+		A7C102CC24089647003653F4 /* ChatListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C102CB24089647003653F4 /* ChatListTVC.swift */; };
 		A7C102CF240896F2003653F4 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C102CD240896F2003653F4 /* MessageCell.swift */; };
 		A7C102D0240896F2003653F4 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7C102CE240896F2003653F4 /* MessageCell.xib */; };
 		A7D78E4F2405BDB100138B2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D78E4E2405BDB100138B2F /* AppDelegate.swift */; };
@@ -36,6 +39,9 @@
 		3601B2B1C04BB7B6B3072037 /* Pods_OneMomForAll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneMomForAll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BB781AEACA08E107AE79406 /* Pods-OneMomForAll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneMomForAll.release.xcconfig"; path = "Target Support Files/Pods-OneMomForAll/Pods-OneMomForAll.release.xcconfig"; sourceTree = "<group>"; };
 		A794A3C2240D8E630079E2A6 /* SwipeTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTVC.swift; sourceTree = "<group>"; };
+		A794A3C4240F37530079E2A6 /* ChatRoomTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomTVC.swift; sourceTree = "<group>"; };
+		A794A3C6240F38330079E2A6 /* ChatListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListCell.swift; sourceTree = "<group>"; };
+		A794A3C7240F38330079E2A6 /* ChatListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatListCell.xib; sourceTree = "<group>"; };
 		A7AA02BC240608880076CB25 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
 		A7C102BD24076F95003653F4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A7C102BF240840F9003653F4 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
@@ -43,7 +49,7 @@
 		A7C102C32408439B003653F4 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		A7C102C524089544003653F4 /* ChildFormVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildFormVC.swift; sourceTree = "<group>"; };
 		A7C102C9240895FF003653F4 /* LocationTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTVC.swift; sourceTree = "<group>"; };
-		A7C102CB24089647003653F4 /* ChatTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTVC.swift; sourceTree = "<group>"; };
+		A7C102CB24089647003653F4 /* ChatListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListTVC.swift; sourceTree = "<group>"; };
 		A7C102CD240896F2003653F4 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		A7C102CE240896F2003653F4 /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
 		A7D78E4B2405BDB100138B2F /* OMFA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OMFA.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +139,8 @@
 				A7D78E542405BDB100138B2F /* Main.storyboard */,
 				A7C102CD240896F2003653F4 /* MessageCell.swift */,
 				A7C102CE240896F2003653F4 /* MessageCell.xib */,
+				A794A3C6240F38330079E2A6 /* ChatListCell.swift */,
+				A794A3C7240F38330079E2A6 /* ChatListCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -146,7 +154,8 @@
 				A7AA02BC240608880076CB25 /* DashboardVC.swift */,
 				A7C102C524089544003653F4 /* ChildFormVC.swift */,
 				A7C102C9240895FF003653F4 /* LocationTVC.swift */,
-				A7C102CB24089647003653F4 /* ChatTVC.swift */,
+				A7C102CB24089647003653F4 /* ChatListTVC.swift */,
+				A794A3C4240F37530079E2A6 /* ChatRoomTVC.swift */,
 				A794A3C2240D8E630079E2A6 /* SwipeTVC.swift */,
 			);
 			path = Controllers;
@@ -225,6 +234,7 @@
 				A7D78E6E2405C76700138B2F /* GoogleService-Info.plist in Resources */,
 				A7D78E5B2405BDB300138B2F /* Assets.xcassets in Resources */,
 				A7D78E562405BDB100138B2F /* Main.storyboard in Resources */,
+				A794A3C9240F38330079E2A6 /* ChatListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,9 +290,11 @@
 				A7AA02BD240608880076CB25 /* DashboardVC.swift in Sources */,
 				A7C102CF240896F2003653F4 /* MessageCell.swift in Sources */,
 				A7D78E722405CDE500138B2F /* LoginVC.swift in Sources */,
+				A794A3C8240F38330079E2A6 /* ChatListCell.swift in Sources */,
 				A7D78E682405C10100138B2F /* Constants.swift in Sources */,
 				A7D78E702405CDB100138B2F /* RegisterVC.swift in Sources */,
-				A7C102CC24089647003653F4 /* ChatTVC.swift in Sources */,
+				A794A3C5240F37530079E2A6 /* ChatRoomTVC.swift in Sources */,
+				A7C102CC24089647003653F4 /* ChatListTVC.swift in Sources */,
 				A794A3C3240D8E630079E2A6 /* SwipeTVC.swift in Sources */,
 				A7C102C0240840F9003653F4 /* Chat.swift in Sources */,
 				A7C102BE24076F96003653F4 /* User.swift in Sources */,
