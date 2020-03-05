@@ -18,7 +18,7 @@ class User: Object {
 //    @objc dynamic var childInfo: String {
 //        let m: Int = self.numOfMale
 //        let f: Int = self.numOfFemale
-//        return "Child(ren): \(m)M \(f)F"
+//        return "\(m)M \(f)F"
 //    }
     
     let children = List<Child>()

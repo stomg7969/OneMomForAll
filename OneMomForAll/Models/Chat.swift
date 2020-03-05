@@ -16,6 +16,10 @@ class Chat: Object {
     }
     // Also add Date(yyyy/mm/dd) for section
     // add time / yesterday / weekname / mm dd for preview.
+//    @objc dynamic var messageTime: String {
+//        let lastMsgTime = messages.last?.messageTime
+//        return
+//    }
     
     let messages = List<Message>()
     var parentUser = LinkingObjects(fromType: User.self, property: "chats")
