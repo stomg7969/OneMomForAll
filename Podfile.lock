@@ -170,9 +170,6 @@ PODS:
     - FirebaseAuth (~> 6.4.3)
   - Firebase/CoreOnly (6.16.0):
     - FirebaseCore (= 6.6.1)
-  - Firebase/Database (6.16.0):
-    - Firebase/CoreOnly
-    - FirebaseDatabase (~> 6.1.4)
   - Firebase/Firestore (6.16.0):
     - Firebase/CoreOnly
     - FirebaseFirestore (~> 1.10.0)
@@ -195,10 +192,6 @@ PODS:
     - GoogleUtilities/Logger (~> 6.5)
     - nanopb (~> 0.3.901)
   - FirebaseCoreDiagnosticsInterop (1.2.0)
-  - FirebaseDatabase (6.1.4):
-    - FirebaseAuthInterop (~> 1.0)
-    - FirebaseCore (~> 6.0)
-    - leveldb-library (~> 1.22)
   - FirebaseFirestore (1.10.0):
     - abseil/algorithm (= 0.20190808)
     - abseil/base (= 0.20190808)
@@ -264,7 +257,6 @@ PODS:
 DEPENDENCIES:
   - CLTypingLabel
   - Firebase/Auth
-  - Firebase/Database
   - Firebase/Firestore
   - RealmSwift
   - SwiftHEXColors
@@ -281,7 +273,6 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseCoreDiagnostics
     - FirebaseCoreDiagnosticsInterop
-    - FirebaseDatabase
     - FirebaseFirestore
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
@@ -306,7 +297,6 @@ SPEC CHECKSUMS:
   FirebaseCore: 85064903ed6c28e47fec9c7bd149d94ba1b6b6e7
   FirebaseCoreDiagnostics: 5e78803ab276bc5b50340e3c539c06c3de35c649
   FirebaseCoreDiagnosticsInterop: 296e2c5f5314500a850ad0b83e9e7c10b011a850
-  FirebaseDatabase: 0144e0706a4761f1b0e8679572eba8095ddb59be
   FirebaseFirestore: cee8f861d68dadce998876b78a4b75701bc94302
   GoogleDataTransport: 0048df6388dab1c254799f2a30365b1dffe20422
   GoogleDataTransportCCTSupport: f880d70972efa2ed1be4e9173a0f4c5f3dc2d176
@@ -321,6 +311,6 @@ SPEC CHECKSUMS:
   SwiftHEXColors: 7cc78ce189ddaff81f2ec1259b6b1dffdcda7643
   SwipeCellKit: 3972254a826da74609926daf59b08d6c72e619ea
 
-PODFILE CHECKSUM: 16ce2715790af30255c0f9e26c928ad2516ff28c
+PODFILE CHECKSUM: be37be6e09dbd588700e2cf7efeab8e3302910dd
 
 COCOAPODS: 1.8.4

@@ -20,7 +20,6 @@ target 'OneMomForAll' do
   # https://firebase.google.com/docs/ios/setup#available-pods
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
-  pod 'Firebase/Database'
   
   pod 'SwiftHEXColors'
   
