@@ -37,7 +37,7 @@ class ChildFormVC: UIViewController {
     //MARK: - Info pre-filling
     func prefillForm() {
         pageLabel.text = "Update Profile"
-        formBtn.titleLabel?.text = "Update"
+        formBtn.setTitle("Update", for: .normal)
         
         nameTxtField.text = currentChild?.nickName
         // Get numbers from the age string.
