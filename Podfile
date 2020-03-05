@@ -8,6 +8,9 @@ target 'OneMomForAll' do
   # Pods for OneMomForAll
   
   pod 'CLTypingLabel'
+
+  # wraps user's pw and saves. So users don't need to enter next time.
+  # pod 'SwiftKeychainWrapper'
   
   pod 'RealmSwift'
   
@@ -17,6 +20,7 @@ target 'OneMomForAll' do
   # https://firebase.google.com/docs/ios/setup#available-pods
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
+  pod 'Firebase/Database'
   
   pod 'SwiftHEXColors'
   
