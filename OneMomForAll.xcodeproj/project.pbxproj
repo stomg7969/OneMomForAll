@@ -32,6 +32,7 @@
 		A7D78E6E2405C76700138B2F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A7D78E6D2405C76700138B2F /* GoogleService-Info.plist */; };
 		A7D78E702405CDB100138B2F /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D78E6F2405CDB100138B2F /* RegisterVC.swift */; };
 		A7D78E722405CDE500138B2F /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D78E712405CDE500138B2F /* LoginVC.swift */; };
+		A7EFF8C12411D7EE002431AF /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EFF8C02411D7EE002431AF /* UserProfileVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		A7D78E6D2405C76700138B2F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A7D78E6F2405CDB100138B2F /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		A7D78E712405CDE500138B2F /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		A7EFF8C02411D7EE002431AF /* UserProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 				A7AA02BC240608880076CB25 /* DashboardVC.swift */,
 				A7C102C524089544003653F4 /* ChildFormVC.swift */,
 				A7C102C9240895FF003653F4 /* LocationTVC.swift */,
+				A7EFF8C02411D7EE002431AF /* UserProfileVC.swift */,
 				A7C102CB24089647003653F4 /* ChatListTVC.swift */,
 				A794A3C4240F37530079E2A6 /* ChatRoomTVC.swift */,
 				A794A3C2240D8E630079E2A6 /* SwipeTVC.swift */,
@@ -302,6 +305,7 @@
 				A7C102CA240895FF003653F4 /* LocationTVC.swift in Sources */,
 				A7C102C42408439B003653F4 /* Message.swift in Sources */,
 				A7D78E532405BDB100138B2F /* WelcomeVC.swift in Sources */,
+				A7EFF8C12411D7EE002431AF /* UserProfileVC.swift in Sources */,
 				A7D78E4F2405BDB100138B2F /* AppDelegate.swift in Sources */,
 				A7C102C224084102003653F4 /* Child.swift in Sources */,
 				A7D78E512405BDB100138B2F /* SceneDelegate.swift in Sources */,

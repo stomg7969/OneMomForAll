@@ -19,10 +19,13 @@ struct K {
     static let registerComplete = "LoginVC"
     static let loginComplete = "LoginToDashboard"
     static let locationList = "DashToMap"
-    static let chatList = "DashToChat"
+    static let chatList = "DashToChatList"
     static let childForm = "SubmitChildForm"
     static let chatListCell = "ChatListCell"
     static let messageCell = "MessageCell"
+    static let userProfile = "MapToUserProfile"
+    static let mapToChatRoom = "MapToChat"
+    static let ListToChatRoom = "ChatListToChat"
         
     struct C {
         static let pink = "FFB5B5"
