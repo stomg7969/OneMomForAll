@@ -14,6 +14,7 @@ class UserProfileVC: UIViewController {
     @IBOutlet weak var userName: UILabel!
     
     var selectedUser: User?
+    var currentUser: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,7 @@ class UserProfileVC: UIViewController {
         dismiss(animated: true) {
             print("success! ", self.selectedUser?.name)
             print("Now, create TVC for the chat room.")
-            print("To create the chat room, I need to design Chat model with Firebase/Firestore. Look at the saved YouTube.")
+            print("In this VC, I have currentUser and targetUser. Now I need to create chat using Firebase FireStore")
 //            self.navigationController?.popToViewController(<#T##viewController: UIViewController##UIViewController#>, animated: true)
         }
     }

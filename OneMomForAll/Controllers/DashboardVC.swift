@@ -151,9 +151,8 @@ extension DashboardVC: UITableViewDelegate, UITableViewDataSource {
             }
             
         } else if segue.identifier == K.locationList {
-//            let destinationVC = segue.destination as! LocationTVC
-            print("Nothing yet for the Location List")
-            
+            let destinationVC = segue.destination as! LocationTVC
+            destinationVC.currentUser = currUser     
             
         } else if segue.identifier == K.chatList {
 //            let destinationVC = segue.destination as! ChatListTVC

@@ -12,6 +12,7 @@ import RealmSwift
 class LocationTVC: UITableViewController {
 
     var userList: Results<User>?
+    var currentUser: User?
     let realm = try! Realm()
     
     override func viewDidLoad() {
@@ -22,7 +23,9 @@ class LocationTVC: UITableViewController {
     }
     
     func loadNearByUsers() {
-        userList = realm.objects(User.self)
+        if let currUserEmail = currentUser?.email {
+            userList = realm.objects(User.self).filter("email != %@", currUserEmail)
+        }
     }
     
     func setTableViewDelegates() {
@@ -57,6 +60,7 @@ class LocationTVC: UITableViewController {
         
         if let indexPath = tableView.indexPathForSelectedRow {
             destinationVC.selectedUser = userList?[indexPath.row]
+            destinationVC.currentUser = currentUser
         }
     }
 }
