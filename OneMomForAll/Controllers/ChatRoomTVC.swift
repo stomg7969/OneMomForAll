@@ -10,10 +10,16 @@ import UIKit
 
 class ChatRoomTVC: UITableViewController {
 
+    var selectedUser: User?
+    var currentUser: User?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
     // Register 'this' cell with my custom nib file
        tableView.register(UINib(nibName: K.messageCell, bundle: nil), forCellReuseIdentifier: K.reusingCell)
+        
+        print("Segue to chatroom from profile page is successful.")
+        print("Next step is to design chat room")
     }
 }

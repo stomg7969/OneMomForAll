@@ -23,12 +23,16 @@ class UserProfileVC: UIViewController {
     }
     
     @IBAction func initChatBtn(_ sender: UIButton) {
-        dismiss(animated: true) {
-            print("success! ", self.selectedUser?.name)
-            print("Now, create TVC for the chat room.")
-            print("In this VC, I have currentUser and targetUser. Now I need to create chat using Firebase FireStore")
-//            self.navigationController?.popToViewController(<#T##viewController: UIViewController##UIViewController#>, animated: true)
-        }
+        performSegue(withIdentifier: K.profileToChat, sender: self)
+        
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == K.profileToChat {
+            let destinationVC = segue.destination as! ChatRoomTVC
+            
+            destinationVC.selectedUser = selectedUser
+            destinationVC.currentUser = currentUser
+        }
+    }    
 }

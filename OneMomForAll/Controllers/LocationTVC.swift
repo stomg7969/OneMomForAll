@@ -56,11 +56,14 @@ class LocationTVC: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as! UserProfileVC
-        
-        if let indexPath = tableView.indexPathForSelectedRow {
-            destinationVC.selectedUser = userList?[indexPath.row]
-            destinationVC.currentUser = currentUser
+        if segue.identifier == K.userProfile {
+            let destinationVC = segue.destination as! UserProfileVC
+            
+            if let indexPath = tableView.indexPathForSelectedRow {
+                destinationVC.selectedUser = userList?[indexPath.row]
+                destinationVC.currentUser = currentUser
+            }
         }
+        
     }
 }

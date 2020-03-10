@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One MOM For ALL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hg-YP-q4s" customClass="CLTypingLabel" customModule="CLTypingLabel">
-                                <rect key="frame" x="60.5" y="427" width="293" height="42"/>
+                                <rect key="frame" x="207" y="448" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                 <color key="textColor" red="1" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -366,11 +366,11 @@
             <objects>
                 <viewController id="z0s-58-Tqb" customClass="UserProfileVC" customModule="OMFA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eqb-a7-nBG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kcr-sq-qUU" userLabel="Profile View">
-                                <rect key="frame" x="67" y="124" width="280" height="247"/>
+                                <rect key="frame" x="67" y="212" width="280" height="247"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Oz7-z1-1vb">
                                         <rect key="frame" x="20" y="21" width="240" height="128"/>
@@ -397,7 +397,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Dc-FU-5oy" userLabel="Btn View">
-                                <rect key="frame" x="145.5" y="581.5" width="123" height="146.5"/>
+                                <rect key="frame" x="145.5" y="635.5" width="123" height="146.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wis-br-Vaj">
                                         <rect key="frame" x="34" y="30" width="55" height="50"/>
@@ -446,11 +446,12 @@
                     <connections>
                         <outlet property="userImage" destination="Oz7-z1-1vb" id="4nu-YE-O2C"/>
                         <outlet property="userName" destination="BlR-RE-Ely" id="r2F-cq-dAO"/>
+                        <segue destination="7Rx-op-weU" kind="show" identifier="ProfileToChat" id="iKF-c4-AAp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CzS-03-SRC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2044.9275362318842" y="1966.7410714285713"/>
+            <point key="canvasLocation" x="2577" y="1967"/>
         </scene>
         <!--LocationTVC-->
         <scene sceneID="5M4-dt-6FD">
@@ -477,18 +478,17 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="qT5-gG-a3z"/>
                     <connections>
-                        <segue destination="7Rx-op-weU" kind="show" identifier="MapToChat" id="u92-8a-Gsb"/>
-                        <segue destination="z0s-58-Tqb" kind="presentation" identifier="MapToUserProfile" id="Kzl-IC-fUh"/>
+                        <segue destination="z0s-58-Tqb" kind="show" identifier="MapToUserProfile" id="Kzl-IC-fUh"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="toC-sM-KdF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2578" y="1207"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Chat RoomTVC-->
         <scene sceneID="C2v-6V-6x2">
             <objects>
-                <tableViewController id="7Rx-op-weU" sceneMemberID="viewController">
+                <tableViewController id="7Rx-op-weU" customClass="ChatRoomTVC" customModule="OMFA" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="97g-GT-XSv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -512,7 +512,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aik-GE-HNv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3070" y="1967"/>
+            <point key="canvasLocation" x="3593" y="1967"/>
         </scene>
         <!--Chat ListTVC-->
         <scene sceneID="kYJ-z9-7Bb">
@@ -836,6 +836,6 @@
         <image name="textfield" width="298" height="93"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="u92-8a-Gsb"/>
+        <segue reference="vDD-RO-KsJ"/>
     </inferredMetricsTieBreakers>
 </document>
