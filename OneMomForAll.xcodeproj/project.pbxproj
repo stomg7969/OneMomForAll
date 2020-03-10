@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		09A8FF3653A2DACBFEB38B11 /* Pods_OneMomForAll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3601B2B1C04BB7B6B3072037 /* Pods_OneMomForAll.framework */; };
 		A794A3C3240D8E630079E2A6 /* SwipeTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794A3C2240D8E630079E2A6 /* SwipeTVC.swift */; };
-		A794A3C5240F37530079E2A6 /* ChatRoomTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794A3C4240F37530079E2A6 /* ChatRoomTVC.swift */; };
 		A794A3C8240F38330079E2A6 /* ChatListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A794A3C6240F38330079E2A6 /* ChatListCell.swift */; };
 		A794A3C9240F38330079E2A6 /* ChatListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A794A3C7240F38330079E2A6 /* ChatListCell.xib */; };
 		A7AA02BD240608880076CB25 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AA02BC240608880076CB25 /* DashboardVC.swift */; };
@@ -33,6 +32,7 @@
 		A7D78E702405CDB100138B2F /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D78E6F2405CDB100138B2F /* RegisterVC.swift */; };
 		A7D78E722405CDE500138B2F /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D78E712405CDE500138B2F /* LoginVC.swift */; };
 		A7EFF8C12411D7EE002431AF /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EFF8C02411D7EE002431AF /* UserProfileVC.swift */; };
+		A7EFF8C324172B67002431AF /* ChatRoomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EFF8C224172B66002431AF /* ChatRoomVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +40,6 @@
 		3601B2B1C04BB7B6B3072037 /* Pods_OneMomForAll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneMomForAll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BB781AEACA08E107AE79406 /* Pods-OneMomForAll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneMomForAll.release.xcconfig"; path = "Target Support Files/Pods-OneMomForAll/Pods-OneMomForAll.release.xcconfig"; sourceTree = "<group>"; };
 		A794A3C2240D8E630079E2A6 /* SwipeTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTVC.swift; sourceTree = "<group>"; };
-		A794A3C4240F37530079E2A6 /* ChatRoomTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomTVC.swift; sourceTree = "<group>"; };
 		A794A3C6240F38330079E2A6 /* ChatListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListCell.swift; sourceTree = "<group>"; };
 		A794A3C7240F38330079E2A6 /* ChatListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatListCell.xib; sourceTree = "<group>"; };
 		A7AA02BC240608880076CB25 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
@@ -66,6 +65,7 @@
 		A7D78E6F2405CDB100138B2F /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		A7D78E712405CDE500138B2F /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		A7EFF8C02411D7EE002431AF /* UserProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVC.swift; sourceTree = "<group>"; };
+		A7EFF8C224172B66002431AF /* ChatRoomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,7 +158,7 @@
 				A7C102C9240895FF003653F4 /* LocationTVC.swift */,
 				A7EFF8C02411D7EE002431AF /* UserProfileVC.swift */,
 				A7C102CB24089647003653F4 /* ChatListTVC.swift */,
-				A794A3C4240F37530079E2A6 /* ChatRoomTVC.swift */,
+				A7EFF8C224172B66002431AF /* ChatRoomVC.swift */,
 				A794A3C2240D8E630079E2A6 /* SwipeTVC.swift */,
 			);
 			path = Controllers;
@@ -296,7 +296,6 @@
 				A794A3C8240F38330079E2A6 /* ChatListCell.swift in Sources */,
 				A7D78E682405C10100138B2F /* Constants.swift in Sources */,
 				A7D78E702405CDB100138B2F /* RegisterVC.swift in Sources */,
-				A794A3C5240F37530079E2A6 /* ChatRoomTVC.swift in Sources */,
 				A7C102CC24089647003653F4 /* ChatListTVC.swift in Sources */,
 				A794A3C3240D8E630079E2A6 /* SwipeTVC.swift in Sources */,
 				A7C102C0240840F9003653F4 /* Chat.swift in Sources */,
@@ -307,6 +306,7 @@
 				A7D78E532405BDB100138B2F /* WelcomeVC.swift in Sources */,
 				A7EFF8C12411D7EE002431AF /* UserProfileVC.swift in Sources */,
 				A7D78E4F2405BDB100138B2F /* AppDelegate.swift in Sources */,
+				A7EFF8C324172B67002431AF /* ChatRoomVC.swift in Sources */,
 				A7C102C224084102003653F4 /* Child.swift in Sources */,
 				A7D78E512405BDB100138B2F /* SceneDelegate.swift in Sources */,
 			);

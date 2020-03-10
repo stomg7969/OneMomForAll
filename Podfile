@@ -7,7 +7,10 @@ target 'OneMomForAll' do
 
   # Pods for OneMomForAll
   
+  # Creats labeling animation
   pod 'CLTypingLabel'
+  # Lifts the entire view upto render keyboard
+  pod 'IQKeyboardManagerSwift'
 
   # wraps user's pw and saves. So users don't need to enter next time.
   # pod 'SwiftKeychainWrapper'

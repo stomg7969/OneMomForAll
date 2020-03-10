@@ -29,7 +29,7 @@ class UserProfileVC: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == K.profileToChat {
-            let destinationVC = segue.destination as! ChatRoomTVC
+            let destinationVC = segue.destination as! ChatRoomVC
             
             destinationVC.selectedUser = selectedUser
             destinationVC.currentUser = currentUser

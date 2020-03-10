@@ -12,6 +12,9 @@ import CLTypingLabel
 class WelcomeVC: UIViewController {
     
     @IBOutlet weak var welcomeLabel: CLTypingLabel!
+    @IBOutlet weak var regiBtn: UIButton!
+    @IBOutlet weak var loginBtn: UIButton!
+    
     
 //    override func viewWillAppear(_ animated: Bool) {
 //        // If you override this method, you 'MUST' call 'super' at some point.
@@ -27,8 +30,18 @@ class WelcomeVC: UIViewController {
         super.viewDidLoad()
         
         welcomeLabel.text = K.appName
+        
+        regiBtn.applyDesign()
+        loginBtn.applyDesign()
     }
-    
-    
 }
 
+extension UIButton {
+    func applyDesign() {
+        self.layer.cornerRadius = 25.0
+        //        self.layer.cornerRadius = buttons.frame.size.height / 5.0
+        //        self.layer.borderWidth = 2.0
+        //        self.layer.borderColor = UIColor.white.cgColor
+        //        self.clipsToBounds = true
+    }
+}
