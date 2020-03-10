@@ -21,7 +21,7 @@ class ChatRoomVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Refer to FlashChat app. It's time to touch My Models with FireStore
+        print("Refer to FlashChat app. It's time to touch My Models with FireStore")
         viewConfiguration()
         setTableViewDelegates()
     }
