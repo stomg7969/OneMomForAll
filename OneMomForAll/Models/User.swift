@@ -13,13 +13,8 @@ class User: Object {
     @objc dynamic var email: String = ""
     @objc dynamic var name: String = "TemporaryName"
     @objc dynamic var nameUpdated: Bool = false
-//    @objc dynamic var numOfMale: Int = 0
-//    @objc dynamic var numOfFemale: Int = 0
-//    @objc dynamic var childInfo: String {
-//        let m: Int = self.numOfMale
-//        let f: Int = self.numOfFemale
-//        return "\(m)M \(f)F"
-//    }
+    @objc dynamic var numOfMale: Int = 0
+    @objc dynamic var numOfFemale: Int = 0
     
     let children = List<Child>()
     let chats = List<Chat>()

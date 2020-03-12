@@ -20,6 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         print(Realm.Configuration.defaultConfiguration.fileURL!)
         FirebaseApp.configure()
+        let db = Firestore.firestore()
+        // if db returns nothing, check pod --version.
+        // sudo gem install cocoapods for updating.
+        print(db)
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = false
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true

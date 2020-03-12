@@ -40,7 +40,7 @@ class ChildFormVC: UIViewController {
         formBtn.setTitle("Update", for: .normal)
         
         nameTxtField.text = currentChild?.nickName
-        // Get numbers from the age string.
+//         Get numbers from the age string.
         ageTxtField.text = (currentChild?.age.components(separatedBy: CharacterSet.decimalDigits.inverted).joined())!
         
         if (currentChild?.age.contains("m"))! {
@@ -96,17 +96,22 @@ class ChildFormVC: UIViewController {
                 try self.realm.write {
                     let newChild = Child()
                     newChild.nickName = nameTxtField.text!
-                    newChild.age = monthBtn.isSelected ? "\(ageTxtField.text!)m" : "\(ageTxtField.text!)y"
-// *EXTRA*          // For future extra feature to provide a User's child(ren) info.
-//                    if maleBtn.isSelected {
-//                        newChild.gender = "Male"
-//                        newChild.numOfMale += 1
-//                    } else {
-//                        newChild.gender = "Female"
-//                        newChild.numOfFemale += 1
-//                    }
-                    newChild.gender = maleBtn.isSelected ? "Male" : "Female"
-// *EXTRA*            newChild.birthdate = Date()
+                    if monthBtn.isSelected {
+                        newChild.calcAge = Int(ageTxtField.text!)!
+                        newChild.age = "\(ageTxtField.text!)m"
+                    } else {
+                        newChild.calcAge = Int(ageTxtField.text!)! * 12
+                        newChild.age = "\(ageTxtField.text!)y"
+                    }
+//                    newChild.age = monthBtn.isSelected ? "\(ageTxtField.text!)m" : "\(ageTxtField.text!)y"
+                    if maleBtn.isSelected {
+                        newChild.gender = "Male"
+                        user.numOfMale += 1
+                    } else {
+                        newChild.gender = "Female"
+                        user.numOfFemale += 1
+                    }
+                    // newChild.gender = maleBtn.isSelected ? "Male" : "Female"
                     user.children.append(newChild)
                 }
             navigationController?.popViewController(animated: true)
@@ -117,12 +122,32 @@ class ChildFormVC: UIViewController {
     }
     
     func updateChild() {
-        if let child = self.currentChild {
+        if let user = self.currentUser, let child = self.currentChild {
             do {
                 try self.realm.write {
                     child.nickName = nameTxtField.text!
-                    child.age = monthBtn.isSelected ? "\(ageTxtField.text!)m" : "\(ageTxtField.text!)y"
-                    child.gender = maleBtn.isSelected ? "Male" : "Female"
+                    if monthBtn.isSelected {
+                        child.calcAge = Int(ageTxtField.text!)!
+                        child.age = "\(ageTxtField.text!)m"
+                    } else {
+                        child.calcAge = Int(ageTxtField.text!)! * 12
+                        child.age = "\(ageTxtField.text!)y"
+                    }
+//                    child.age = monthBtn.isSelected ? "\(ageTxtField.text!)m" : "\(ageTxtField.text!)y"
+                    if child.gender == "Male" && maleBtn.isSelected {
+                        child.gender = "Male"
+                    } else if child.gender == "Male" && femaleBtn.isSelected {
+                        child.gender = "Female"
+                        user.numOfFemale += 1
+                        user.numOfMale -= 1
+                    } else if child.gender == "Female" && femaleBtn.isSelected {
+                        child.gender = "Female"
+                    } else if child.gender == "Female" && maleBtn.isSelected {
+                        child.gender = "Male"
+                        user.numOfFemale -= 1
+                        user.numOfMale += 1
+                    }                    
+//                    child.gender = maleBtn.isSelected ? "Male" : "Female"
                 }
                 navigationController?.popViewController(animated: true)
             } catch {

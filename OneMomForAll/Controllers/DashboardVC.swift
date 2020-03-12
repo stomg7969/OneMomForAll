@@ -89,7 +89,7 @@ class DashboardVC: UIViewController {
     
     //MARK: - Data Manipulation
     func loadChildList() {
-        childList = currUser?.children.sorted(byKeyPath: "age", ascending: true)
+        childList = currUser?.children.sorted(byKeyPath: "calcAge", ascending: true)
 //        tableView?.reloadData()
     }
     //MARK: - Navigation Btns

@@ -13,6 +13,16 @@ class Child: Object {
     @objc dynamic var nickName: String = ""
     @objc dynamic var gender: String = ""
     @objc dynamic var age: String = "10m"
+    @objc dynamic var calcAge: Int = 0
+//    if let num = Int(age.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()) {
+//        if age.contains("y") {
+//            return num * 12
+//        } else {
+//            return num
+//        }
+//    }
+//    return 0
+    
 //    @objc dynamic var birthdate: String {
 //        // get current year/month/day in just numbers if possible.
 //        // parse age to get just number.

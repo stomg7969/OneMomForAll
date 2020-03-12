@@ -10,10 +10,11 @@ import Foundation
 import RealmSwift
 
 class Chat: Object {
-    @objc dynamic var title: String = ""
-    @objc dynamic var preview: String {
-        return messages.last?.body ?? ""
-    }
+    @objc dynamic var owner: String = ""
+    @objc dynamic var target: String = ""
+//    @objc dynamic var preview: String {
+//        return messages.last?.body ?? ""
+//    } --> This kind of format doesn't work with Realm.
     // Also add Date(yyyy/mm/dd) for section
     // add time / yesterday / weekname / mm dd for preview.
 //    @objc dynamic var messageTime: String {

@@ -33,9 +33,11 @@ struct K {
     }
     
     struct FB {
-        static let collectionName = "messages"
+        static let collectionName = "chat"
         static let senderField = "sender"
         static let bodyField = "body"
-        static let dateField = "date"
+        static let createdAt = "createdAt"
+        static let chatMember = "chatMember"
+        static let messages = "messages"
     }
 }
