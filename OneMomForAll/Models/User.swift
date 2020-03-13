@@ -17,7 +17,7 @@ class User: Object {
     @objc dynamic var numOfFemale: Int = 0
     
     let children = List<Child>()
-    let chats = List<Chat>()
+//    let chats = List<Chat>()
 }
 // Parsing int from age: String to calculate children age.
 //if let number = Int(array[1].components(separatedBy: CharacterSet.decimalDigits.inverted).joined()) {

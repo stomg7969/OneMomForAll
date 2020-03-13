@@ -26,6 +26,7 @@ struct K {
     static let userProfile = "MapToUserProfile"
     static let ListToChatRoom = "ChatListToChat"
     static let profileToChat = "ProfileToChat"
+    static let roomToChatList = "ChatRoomToChatList"
         
     struct C {
         static let pink = "FFB5B5"

@@ -18,6 +18,8 @@ class ChatRoomVC: UIViewController {
     let db = Firestore.firestore()
     var selectedUser: User?
     var currentUser: User?
+    var docName: String?
+    var messages: [Message] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +27,7 @@ class ChatRoomVC: UIViewController {
         print("Lecture 205")
         viewConfiguration()
         setTableViewDelegates()
-        initiateChat()
+//        loadMessages() // --> should initiateMessages(), I should alrdy be in chatroom.
     }
     
     func setTableViewDelegates() {
@@ -43,26 +45,35 @@ class ChatRoomVC: UIViewController {
         messageField.clipsToBounds = true
     }
     
-    func initiateChat() {
-        // Add chat to Firestore
-        let chatRef = db.collection(K.FB.collectionName)
-        chatRef.document(currentUser!.email).setData([
-            K.FB.chatMember: [currentUser!.email, selectedUser!.email],
-            K.FB.createdAt: Date().timeIntervalSince1970,
-            K.FB.messages: []
-        ])
-        // Add chat to Realm for offline purpose, but messageField must be DISABLED.
-        // Or is it a good Idea? Realm suggests not to have big data.
+    func loadMessages() {
+        // .getDocuments will get docs but .addSnapshotListener will listen to changes.
+        // order???
+        db.collection(K.FB.collectionName).document(docName!).getDocument { (document, err) in
+                self.messages = []
+                if let document = document, document.exists {
+                    let doc = document.data()
+                     print("Doc: ", doc!)
+                } else {
+                    print("Document does not exist")
+                }
+        }
     }
-
+    //MARK: - Btn Pressed
+    @IBAction func goBackBtnPressed(_ sender: UIBarButtonItem) {
+//        navigationController?.popToViewController(DashboardVC, animated: true)
+//        performSegue(withIdentifier: K.roomToChatList, sender: self)
+    }
+    
     @IBAction func sendBtnPressed(_ sender: UIButton) {
         if let messageBody = messageField.text, let messageSender = Auth.auth().currentUser?.email {
             // db.collection(<#T##collectionPath: String##String#>) -> this stores title of the data.
             // .addDocument() stores body. Like Fetch post with Content Body.
-            db.collection(K.FB.collectionName).addDocument(data: [
-                K.FB.senderField: messageSender,
-                K.FB.bodyField: messageBody,
-//                K.FB.dateField: Date().timeIntervalSince1970
+            db.collection(K.FB.collectionName).document(docName!).updateData([
+                K.FB.messages: FieldValue.arrayUnion([
+                    K.FB.senderField: messageSender,
+                    K.FB.bodyField: messageBody,
+                    K.FB.createdAt: Date().timeIntervalSince1970
+                ])
             ]) { (error) in
                 if let e = error {
                     print("issue in saving data: \(e)")

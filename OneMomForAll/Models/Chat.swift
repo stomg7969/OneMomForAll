@@ -7,11 +7,13 @@
 //
 
 import Foundation
-import RealmSwift
+//import RealmSwift
 
-class Chat: Object {
-    @objc dynamic var owner: String = ""
-    @objc dynamic var target: String = ""
+struct Chat {
+    let owner: String
+    let target: String
+//    @objc dynamic var owner: String = ""
+//    @objc dynamic var target: String = ""
 //    @objc dynamic var preview: String {
 //        return messages.last?.body ?? ""
 //    } --> This kind of format doesn't work with Realm.
@@ -22,6 +24,6 @@ class Chat: Object {
 //        return
 //    }
     
-    let messages = List<Message>()
-    var parentUser = LinkingObjects(fromType: User.self, property: "chats")
+//    let messages = List<Message>()
+//    var parentUser = LinkingObjects(fromType: User.self, property: "chats")
 }

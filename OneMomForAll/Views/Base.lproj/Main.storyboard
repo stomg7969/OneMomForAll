@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One MOM For ALL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hg-YP-q4s" customClass="CLTypingLabel" customModule="CLTypingLabel">
-                                <rect key="frame" x="207" y="448" width="0.0" height="0.0"/>
+                                <rect key="frame" x="60.5" y="427" width="293" height="42"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                 <color key="textColor" red="1" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -547,7 +547,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YXu-Xz-8bZ"/>
                     </view>
-                    <navigationItem key="navigationItem" id="X62-ri-VHu"/>
+                    <navigationItem key="navigationItem" id="X62-ri-VHu">
+                        <barButtonItem key="rightBarButtonItem" image="arrow.left" catalog="system" id="fi1-sK-nZK">
+                            <connections>
+                                <action selector="goBackBtnPressed:" destination="uUW-yL-v4G" id="DUm-op-v6n"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="messageField" destination="alc-nS-AcZ" id="hqm-ic-JkK"/>
                         <outlet property="tableView" destination="gVG-Zg-O75" id="zmt-3j-u3u"/>
@@ -555,7 +561,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jcp-17-Lt5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3592.753623188406" y="1966.7410714285713"/>
+            <point key="canvasLocation" x="3399" y="1967"/>
         </scene>
         <!--Chat ListTVC-->
         <scene sceneID="kYJ-z9-7Bb">
@@ -587,7 +593,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vcb-mt-QYf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3594" y="1207"/>
+            <point key="canvasLocation" x="4100" y="1207"/>
         </scene>
         <!--RegisterVC-->
         <scene sceneID="9Kv-5r-NgW">
@@ -870,6 +876,7 @@
     </scenes>
     <resources>
         <image name="Background-Bubbles" width="352" height="102"/>
+        <image name="arrow.left" catalog="system" width="64" height="48"/>
         <image name="camera" catalog="system" width="64" height="48"/>
         <image name="location.circle" catalog="system" width="64" height="60"/>
         <image name="paperplane.fill" catalog="system" width="64" height="60"/>
@@ -880,6 +887,6 @@
         <image name="textfield" width="298" height="93"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eH1-Ai-ih5"/>
+        <segue reference="gYa-BF-EhP"/>
     </inferredMetricsTieBreakers>
 </document>
