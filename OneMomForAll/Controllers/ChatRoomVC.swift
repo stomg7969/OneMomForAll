@@ -69,11 +69,11 @@ class ChatRoomVC: UIViewController {
             // db.collection(<#T##collectionPath: String##String#>) -> this stores title of the data.
             // .addDocument() stores body. Like Fetch post with Content Body.
             db.collection(K.FB.collectionName).document(docName!).updateData([
-                K.FB.messages: FieldValue.arrayUnion([
+                K.FB.messages: FieldValue.arrayUnion([[
                     K.FB.senderField: messageSender,
                     K.FB.bodyField: messageBody,
                     K.FB.createdAt: Date().timeIntervalSince1970
-                ])
+                ]])
             ]) { (error) in
                 if let e = error {
                     print("issue in saving data: \(e)")
