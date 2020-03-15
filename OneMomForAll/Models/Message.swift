@@ -12,6 +12,7 @@ import Foundation
 struct Message {
     let sender: String
     let body: String
+    let username: String
     let createdAt: TimeInterval
 //    @objc dynamic var sender: String = ""
 //    @objc dynamic var body: String = ""

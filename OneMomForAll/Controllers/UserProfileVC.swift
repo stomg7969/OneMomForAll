@@ -27,16 +27,16 @@ class UserProfileVC: UIViewController {
     
     @IBAction func initChatBtn(_ sender: UIButton) {
         // Add chat to Firestore
-        let chatRef = db.collection(K.FB.collectionName)
+        let chatRef = db.collection(K.Firebase.collectionName)
         // sort two member to have consistnat document name.
         newDocName = [currentUser!.email, selectedUser!.email].sorted().joined()
         // the Document name will be the chat ID. So it's "searchable".
         chatRef.document(newDocName!).getDocument { (doc, err) in
             if !doc!.exists {
                 chatRef.document(self.newDocName!).setData([
-                    K.FB.chatMember: [self.currentUser!.email, self.selectedUser!.email],
-                    K.FB.createdAt: Date().timeIntervalSince1970,
-                    K.FB.messages: []
+                    K.Firebase.chatMember: [self.currentUser!.email, self.selectedUser!.email],
+                    K.Firebase.createdAt: Date().timeIntervalSince1970,
+                    K.Firebase.messages: []
                 ])
             }
         }

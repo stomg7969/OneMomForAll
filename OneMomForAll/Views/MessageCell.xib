@@ -9,25 +9,25 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="123" id="KGk-i7-Jjw" customClass="MessageCell" customModule="OMFA" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="400" height="123"/>
+        <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="105" id="KGk-i7-Jjw" customClass="MessageCell" customModule="OMFA" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="105"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="400" height="123"/>
+                <rect key="frame" x="0.0" y="0.0" width="400" height="105"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="p5Z-ug-WRD">
-                        <rect key="frame" x="10" y="10" width="380" height="73"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="p5Z-ug-WRD">
+                        <rect key="frame" x="10" y="10" width="380" height="85"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7RR-sS-aJI">
-                                <rect key="frame" x="0.0" y="1.5" width="40" height="70"/>
+                                <rect key="frame" x="0.0" y="1.5" width="40" height="37"/>
                                 <color key="tintColor" red="0.080323077739999998" green="0.21182638409999999" blue="0.2289803624" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="BTf-oZ-JJx"/>
-                                    <constraint firstAttribute="width" constant="40" id="KBM-wr-B2r"/>
+                                    <constraint firstAttribute="height" constant="40" identifier="1" id="BTf-oZ-JJx"/>
+                                    <constraint firstAttribute="width" constant="40" identifier="2" id="KBM-wr-B2r"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9pN-RJ-ZC6">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9pN-RJ-ZC6">
                                 <rect key="frame" x="60" y="0.0" width="320" height="73"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nickname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AcY-g0-LcK">
@@ -39,19 +39,19 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wat-fQ-ZtM">
                                         <rect key="frame" x="0.0" y="23" width="320" height="50"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pm-AQ-uSh">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label lines to 0 to auto-expand. 'you' and 'me' will be distinguished depending on who the current user is." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pm-AQ-uSh">
                                                 <rect key="frame" x="10" y="10" width="300" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstItem="9pm-AQ-uSh" firstAttribute="top" secondItem="Wat-fQ-ZtM" secondAttribute="top" constant="10" id="SgZ-W6-YKK"/>
-                                            <constraint firstAttribute="trailing" secondItem="9pm-AQ-uSh" secondAttribute="trailing" constant="10" id="SrK-ct-KlH"/>
-                                            <constraint firstItem="9pm-AQ-uSh" firstAttribute="leading" secondItem="Wat-fQ-ZtM" secondAttribute="leading" constant="10" id="c7V-F6-jzB"/>
-                                            <constraint firstAttribute="bottom" secondItem="9pm-AQ-uSh" secondAttribute="bottom" constant="10" id="wM8-qM-QOm"/>
+                                            <constraint firstItem="9pm-AQ-uSh" firstAttribute="top" secondItem="Wat-fQ-ZtM" secondAttribute="top" constant="10" identifier="3" id="SgZ-W6-YKK"/>
+                                            <constraint firstAttribute="trailing" secondItem="9pm-AQ-uSh" secondAttribute="trailing" priority="999" constant="10" identifier="4" id="SrK-ct-KlH"/>
+                                            <constraint firstItem="9pm-AQ-uSh" firstAttribute="leading" secondItem="Wat-fQ-ZtM" secondAttribute="leading" priority="999" constant="10" identifier="5" id="c7V-F6-jzB"/>
+                                            <constraint firstAttribute="bottom" secondItem="9pm-AQ-uSh" secondAttribute="bottom" constant="10" identifier="6" id="wM8-qM-QOm"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -60,10 +60,10 @@
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="p5Z-ug-WRD" secondAttribute="trailing" constant="10" id="Kbc-FR-lH5"/>
-                    <constraint firstAttribute="bottom" secondItem="p5Z-ug-WRD" secondAttribute="bottom" constant="10" id="TIg-ZW-xgC"/>
-                    <constraint firstItem="p5Z-ug-WRD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="hCg-iC-L49"/>
-                    <constraint firstItem="p5Z-ug-WRD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="thc-7z-3AD"/>
+                    <constraint firstItem="p5Z-ug-WRD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" identifier="7" id="AbD-51-7ql"/>
+                    <constraint firstAttribute="bottom" secondItem="p5Z-ug-WRD" secondAttribute="bottom" constant="10" identifier="8" id="IC8-4r-kMb"/>
+                    <constraint firstAttribute="trailing" secondItem="p5Z-ug-WRD" secondAttribute="trailing" constant="10" identifier="9" id="Qec-nk-ka8"/>
+                    <constraint firstItem="p5Z-ug-WRD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" identifier="10" id="u4W-ZZ-CYP"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -73,7 +73,7 @@
                 <outlet property="chatterName" destination="AcY-g0-LcK" id="StO-Wk-cmu"/>
                 <outlet property="message" destination="9pm-AQ-uSh" id="9jg-Kg-gHN"/>
             </connections>
-            <point key="canvasLocation" x="123.18840579710145" y="136.27232142857142"/>
+            <point key="canvasLocation" x="120.28985507246378" y="138.28125"/>
         </tableViewCell>
     </objects>
     <resources>
