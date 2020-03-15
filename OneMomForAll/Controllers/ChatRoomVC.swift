@@ -85,34 +85,6 @@ class ChatRoomVC: UIViewController {
                 }
             }
         }
-//        db.collection(K.Firebase.collectionName).document(docName!).getDocument { (document, err) in
-//                self.messages = []
-//
-//                if let document = document, document.exists {
-//                    let doc = document.data()
-//
-//                    for content in doc?[K.Firebase.messages] as! [Any] {
-//                        let msgContent = content as! [String: Any]
-//
-//                        if let msgSender = msgContent[K.Firebase.senderField] as? String, let msgBody = msgContent[K.Firebase.bodyField] as? String, let nickname = msgContent[K.Firebase.senderName] as? String, let createdAt = msgContent[K.Firebase.createdAt] as? TimeInterval {
-//
-//                            let loadedMsg = Message(sender: msgSender, body: msgBody, username: nickname, createdAt: createdAt)
-//                            self.messages.append(loadedMsg)
-//
-//                            DispatchQueue.main.async {
-//                                self.tableView.reloadData()
-//                                // Each time there is a new message, scroll to the bottom.
-//                                // First we need indexPath because .scrollToRow needs it.
-//                                // section is 0 because we only have one section. Only chat func.
-//                                let indexPath = IndexPath(row: self.messages.count - 1, section: 0)
-//                                self.tableView.scrollToRow(at: indexPath, at: .top, animated: false)
-//                            }
-//                        }
-//                    }
-//                } else {
-//                    print("Document does not exist")
-//                }
-//        }
     }
     //MARK: - Btn Pressed
     @IBAction func goBackBtnPressed(_ sender: UIBarButtonItem) {
