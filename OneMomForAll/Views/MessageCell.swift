@@ -14,6 +14,9 @@ class MessageCell: UITableViewCell {
     @IBOutlet weak var message: UILabel!
     @IBOutlet weak var chatterName: UILabel!
     @IBOutlet weak var chatterImage: UIImageView!
+    @IBOutlet weak var dummyImage: UIImageView!
+    @IBOutlet weak var lTimeLabel: UILabel!
+    @IBOutlet weak var rTimeLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

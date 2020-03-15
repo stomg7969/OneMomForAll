@@ -25,11 +25,12 @@ class ChatRoomVC: UIViewController {
         super.viewDidLoad()
         
         viewConfiguration()
-        setTableViewDelegates()
+        setTableView()
         loadMessages() // --> should initiateMessages(), I should alrdy be in chatroom.
     }
     
-    func setTableViewDelegates() {
+    func setTableView() {
+        tableView.separatorStyle = .none
 //        tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: K.messageCell, bundle: nil), forCellReuseIdentifier: K.reusingCell)
@@ -88,8 +89,10 @@ class ChatRoomVC: UIViewController {
     }
     //MARK: - Btn Pressed
     @IBAction func goBackBtnPressed(_ sender: UIBarButtonItem) {
-//        navigationController?.popToViewController(DashboardVC, animated: true)
+//        self.navigationController!.popToViewController(DashboardVC(), animated: true)
+//        self.navigationController?.pushViewController(DashboardVC(), animated: true)
 //        performSegue(withIdentifier: K.roomToChatList, sender: self)
+        // Deal with this later because each VC might have some variables passed on.
     }
     
     @IBAction func sendBtnPressed(_ sender: UIButton) {
@@ -126,25 +129,33 @@ extension ChatRoomVC: UITableViewDataSource {
         let message = messages[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: K.reusingCell, for: indexPath) as! MessageCell
         
-//        cell.chatterName.text = message.sender
-//        cell.chatPreview.text = message.body
         cell.message.text = message.body
         cell.chatterName.text = message.username
-        
+        // If it's current user
         if message.sender == Auth.auth().currentUser?.email {
-            cell.chatterImage.isHidden = true
+            cell.dummyImage.isHidden = true
             cell.chatterName.isHidden = true
+            cell.rTimeLabel.isHidden = true
+            cell.lTimeLabel.isHidden = false
+            
+            cell.chatterImage.tintColor = UIColor(hexString: K.C.white)
             cell.chatBox.backgroundColor = UIColor(hexString: K.C.green)
             cell.message.textColor = UIColor(hexString: K.C.white)
-        }
-        // This message is from 'you', not current user.
-        else {
-            cell.chatterImage.isHidden = false
+            
+            cell.lTimeLabel.text = "00:00AM"
+            
+        } else {
+            cell.dummyImage.isHidden = false
             cell.chatterName.isHidden = false
+            cell.rTimeLabel.isHidden = false
+            cell.lTimeLabel.isHidden = true
+            
+            cell.chatterImage.tintColor = UIColor(hexString: K.C.green)
             cell.chatBox.backgroundColor = UIColor(hexString: K.C.pink)
             cell.message.textColor = UIColor(hexString: K.C.green)
+            
+            cell.rTimeLabel.text = "00:00AM"
         }
-        
         return cell
     }
 }

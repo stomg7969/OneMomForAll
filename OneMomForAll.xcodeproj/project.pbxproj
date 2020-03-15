@@ -33,6 +33,8 @@
 		A7D78E722405CDE500138B2F /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D78E712405CDE500138B2F /* LoginVC.swift */; };
 		A7EFF8C12411D7EE002431AF /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EFF8C02411D7EE002431AF /* UserProfileVC.swift */; };
 		A7EFF8C324172B67002431AF /* ChatRoomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EFF8C224172B66002431AF /* ChatRoomVC.swift */; };
+		A7EFF8ED241ED8EE002431AF /* MyMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EFF8EB241ED8ED002431AF /* MyMessageCell.swift */; };
+		A7EFF8EE241ED8EE002431AF /* MyMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7EFF8EC241ED8EE002431AF /* MyMessageCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +68,8 @@
 		A7D78E712405CDE500138B2F /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		A7EFF8C02411D7EE002431AF /* UserProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVC.swift; sourceTree = "<group>"; };
 		A7EFF8C224172B66002431AF /* ChatRoomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomVC.swift; sourceTree = "<group>"; };
+		A7EFF8EB241ED8ED002431AF /* MyMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMessageCell.swift; sourceTree = "<group>"; };
+		A7EFF8EC241ED8EE002431AF /* MyMessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyMessageCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,8 @@
 				A7C102CE240896F2003653F4 /* MessageCell.xib */,
 				A794A3C6240F38330079E2A6 /* ChatListCell.swift */,
 				A794A3C7240F38330079E2A6 /* ChatListCell.xib */,
+				A7EFF8EB241ED8ED002431AF /* MyMessageCell.swift */,
+				A7EFF8EC241ED8EE002431AF /* MyMessageCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -235,6 +241,7 @@
 				A7C102D0240896F2003653F4 /* MessageCell.xib in Resources */,
 				A7D78E5E2405BDB300138B2F /* LaunchScreen.storyboard in Resources */,
 				A7D78E6E2405C76700138B2F /* GoogleService-Info.plist in Resources */,
+				A7EFF8EE241ED8EE002431AF /* MyMessageCell.xib in Resources */,
 				A7D78E5B2405BDB300138B2F /* Assets.xcassets in Resources */,
 				A7D78E562405BDB100138B2F /* Main.storyboard in Resources */,
 				A794A3C9240F38330079E2A6 /* ChatListCell.xib in Resources */,
@@ -303,6 +310,7 @@
 				A7C102C624089544003653F4 /* ChildFormVC.swift in Sources */,
 				A7C102CA240895FF003653F4 /* LocationTVC.swift in Sources */,
 				A7C102C42408439B003653F4 /* Message.swift in Sources */,
+				A7EFF8ED241ED8EE002431AF /* MyMessageCell.swift in Sources */,
 				A7D78E532405BDB100138B2F /* WelcomeVC.swift in Sources */,
 				A7EFF8C12411D7EE002431AF /* UserProfileVC.swift in Sources */,
 				A7D78E4F2405BDB100138B2F /* AppDelegate.swift in Sources */,
