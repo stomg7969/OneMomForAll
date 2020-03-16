@@ -28,11 +28,18 @@ class DashboardVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loadUser()
+        setTableView()
         viewConfiguration()
-        setTableViewDelegates()
     }
     override func viewDidAppear(_ animated: Bool) {
         tableView?.reloadData()
+    }
+    
+    func loadUser() {
+        if let currUserEmail = Auth.auth().currentUser?.email {
+            currUser = realm.objects(User.self).filter("email CONTAINS[cd] %@", currUserEmail).first
+        }
     }
     
     func viewConfiguration() {
@@ -44,7 +51,7 @@ class DashboardVC: UIViewController {
         username.text = currUser?.name
     }
     
-    func setTableViewDelegates() {
+    func setTableView() {
         tableView.delegate = self
         tableView.dataSource = self
     }

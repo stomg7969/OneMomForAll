@@ -38,9 +38,9 @@ class LoginVC: UIViewController {
             }
         }
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as! DashboardVC
-        // Send over only the current user information.
-        destinationVC.currUser = realm.objects(User.self).filter("email CONTAINS[cd] %@", emailField.text!).first
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let destinationVC = segue.destination as! DashboardVC
+//        // Send over only the current user information.
+//        destinationVC.currUser = realm.objects(User.self).filter("email CONTAINS[cd] %@", emailField.text!).first
+//    }
 }

@@ -10,8 +10,10 @@ import Foundation
 //import RealmSwift
 
 struct Chat {
-    let owner: String
-    let target: String
+    let chatterName: String
+    let chatPreview: String
+    let lastMsgTime: TimeInterval
+    let createdAt: TimeInterval
 //    @objc dynamic var owner: String = ""
 //    @objc dynamic var target: String = ""
 //    @objc dynamic var preview: String {

@@ -37,6 +37,7 @@ class ChatRoomVC: UIViewController {
     }
     
     func viewConfiguration() {
+        navigationItem.hidesBackButton = true
         title = K.appNameInitial
 //        tableView.rowHeight = 80
 //        messageField.layer.cornerRadius = messageField.frame.size.height / 5.0
@@ -91,8 +92,12 @@ class ChatRoomVC: UIViewController {
     @IBAction func goBackBtnPressed(_ sender: UIBarButtonItem) {
 //        self.navigationController!.popToViewController(DashboardVC(), animated: true)
 //        self.navigationController?.pushViewController(DashboardVC(), animated: true)
-//        performSegue(withIdentifier: K.roomToChatList, sender: self)
-        // Deal with this later because each VC might have some variables passed on.
+        performSegue(withIdentifier: K.roomToList, sender: self)
+//        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func toDashBoardBtnPressed(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: K.roomToDash, sender: self)
     }
     
     @IBAction func sendBtnPressed(_ sender: UIButton) {

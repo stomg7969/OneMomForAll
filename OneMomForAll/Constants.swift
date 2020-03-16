@@ -30,7 +30,9 @@ struct K {
     static let userProfile = "MapToUserProfile"
     static let ListToChatRoom = "ChatListToChat"
     static let profileToChat = "ProfileToChat"
-    static let roomToChatList = "ChatRoomToChatList"
+    static let roomToList = "RoomToList"
+    static let roomToDash = "RoomToDash"
+    static let listToDash = "ListToDash"
         
     struct C {
         static let pink = "FFB5B5"
