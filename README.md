@@ -11,9 +11,9 @@ Parents can located near by friendly parents to offer/request help with anything
 - Other pod files
 
 ## Things to do
-- Time interval to desired format. e.g. time or date or yesterday or weekday
-
+- Time interval to desired format. e.g. time or date or yesterday or weekday.
 - Location branch is not complete: Chat title should display name of the location where the chat was created.
+- Implement SwipeCellKit to the Chat List.
 
 ## Possible features
 - Payment system when exchanging help.

@@ -9,6 +9,7 @@
 import UIKit
 import RealmSwift
 import Firebase
+import SwipeCellKit
 
 class ChatListTVC: UITableViewController {
 
@@ -127,3 +128,37 @@ class ChatListTVC: UITableViewController {
         }
     }
 }
+
+//MARK: - ChatList SwipeCellKit
+//extension ChatListTVC: SwipeTableViewCellDelegate {
+//    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+//        guard orientation == .right else { return nil }
+//
+//        let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
+//            // handle action by updating model with deletion
+//            self.updateModel(at: indexPath)
+//        }
+//        // customize the action appearance
+//        if #available(iOS 13.0, *) {
+//            deleteAction.image = UIImage(systemName: "trash.fill")
+//        } else {
+//            deleteAction.image = UIImage(named: "Trash Icon")
+//        }
+//
+//        return [deleteAction]
+//    }
+//    // This method is for expansion style. e.g. swipe further to delete.
+//    //     https://github.com/SwipeCellKit/SwipeCellKit
+//    func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
+//        var options = SwipeOptions()
+//        options.expansionStyle = .destructive
+//        return options
+//    }
+//    // Lecture 287 - deleting process for dynamic purpose.
+//    func updateModel(at indexPath: IndexPath) {
+//        print("Deleting Chat: \(chats[indexPath.row].chatterEmail ?? "nothing")")
+//        chats.remove(at: indexPath.row)
+//        tableView.reloadData()
+//
+//    }
+//}
