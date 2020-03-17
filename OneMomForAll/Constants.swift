@@ -15,8 +15,8 @@ struct K {
     // with static -> I can: Constants.registerSegue
     
     // Naming
-    static let appName = "One Mom👩🏽For All"
-    static let appNameInitial = "OMFA👩🏽"
+    static let appName = "iParent👼"
+    static let appNameInitial = "iParent"
     // Cell names
     static let reusingCell = "Cell"
     static let messageCell = "MessageCell"
