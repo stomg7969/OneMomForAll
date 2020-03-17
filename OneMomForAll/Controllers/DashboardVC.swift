@@ -24,6 +24,7 @@ class DashboardVC: UIViewController {
     }
     var childList: Results<Child>?
     let realm = try! Realm() // Valid way of declaring for realm.
+    let db = Firestore.firestore()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,10 +77,23 @@ class DashboardVC: UIViewController {
         let action = UIAlertAction(title: "Update", style: .default) { (action) in
             
             do {
+                // Realm
                 try self.realm.write {
                     self.currUser?.name = textField.text!
                     self.username.text = textField.text!
                     self.currUser?.nameUpdated = true
+                }
+                // Firestore
+                self.db.collection(K.Firebase.userCollection).document(self.currUser!.email)
+                .updateData([
+                    K.Firebase.username: textField.text!,
+                    K.Firebase.usernameUpdated: true
+                ]) { (err) in
+                    if let err = err {
+                        print("Error updating document: \(err)")
+                    } else {
+                        print("Document successfully updated")
+                    }
                 }
             } catch {
                 print("Error updating user's nickname, \(error)")

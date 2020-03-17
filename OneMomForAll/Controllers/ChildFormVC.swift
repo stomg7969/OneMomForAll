@@ -114,6 +114,7 @@ class ChildFormVC: UIViewController {
                     // newChild.gender = maleBtn.isSelected ? "Male" : "Female"
                     user.children.append(newChild)
                 }
+                // Update childinfo on Firestore?
             navigationController?.popViewController(animated: true)
             } catch {
                 print("Error creating \(error)")
@@ -149,6 +150,7 @@ class ChildFormVC: UIViewController {
                     }                    
 //                    child.gender = maleBtn.isSelected ? "Male" : "Female"
                 }
+                // Update childinfo on Firestore?
                 navigationController?.popViewController(animated: true)
             } catch {
                 print("Error updating \(error)")

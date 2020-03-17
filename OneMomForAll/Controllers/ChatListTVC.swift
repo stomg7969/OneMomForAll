@@ -36,6 +36,7 @@ class ChatListTVC: UITableViewController {
     }
     
     func loadChats() {
+        print("loading")
         if let currUserEmail = Auth.auth().currentUser?.email {
             
             db.collection(K.Firebase.collectionName).whereField(K.Firebase.chatMember, arrayContains: currUserEmail)
@@ -51,7 +52,7 @@ class ChatListTVC: UITableViewController {
                             
                             if let chatMember = data[K.Firebase.chatMember] as? [Any], let messages = data[K.Firebase.messages] as? [Any], let time = data[K.Firebase.createdAt] as? TimeInterval {
                                 
-                                let chatterName = chatMember.first as? String == currUserEmail ? chatMember.last as? String : chatMember.first as? String
+                                let chatterEmail = chatMember.first as? String == currUserEmail ? chatMember.last as? String : chatMember.first as? String
                                 
                                 guard let lastMsgObj = messages.last as? [String: Any] else {
                                     print("Error guarding lastMsgObj: \(err!)")
@@ -67,22 +68,18 @@ class ChatListTVC: UITableViewController {
                                     print("Error guarding lastMsgTime: \(err!)")
                                     return
                                 }
+                                
                                 // preparing for the segue
                                 self.currentUser = currUserEmail
-                                self.targetUser = chatterName!
-                                self.docName = [currUserEmail, chatterName!].sorted().joined()
+                                self.targetUser = chatterEmail!
+                                self.docName = [currUserEmail, chatterEmail!].sorted().joined()
+                                                                
                                 // Saving fetched information as an object.
-                                let loadedChat = Chat(chatterName: chatterName!, chatPreview: chatPreview, lastMsgTime: lastMsgTime, createdAt: time)
+                                let loadedChat = Chat(chatterEmail: chatterEmail!, chatterName: "", chatPreview: chatPreview, lastMsgTime: lastMsgTime, createdAt: time)
                                 self.chats.append(loadedChat)
                                 
                                 DispatchQueue.main.async {
                                     self.tableView.reloadData()
-                                    
-                                    // Each time there is a new message, scroll to the bottom.
-                                    // First we need indexPath because .scrollToRow needs it.
-                                    // section is 0 because we only have one section. Only chat func.
-                                    let indexPath = IndexPath(row: self.chats.count - 1, section: 0)
-                                    self.tableView.scrollToRow(at: indexPath, at: .top, animated: false)
                                 }
                             }
                         }
@@ -90,6 +87,7 @@ class ChatListTVC: UITableViewController {
             }
         }        
     }
+    
     //MARK: - Btn Pressed
     @IBAction func toDashBoardBtnPressed(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: K.listToDash, sender: self)
@@ -106,7 +104,7 @@ class ChatListTVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.reusingCell, for: indexPath) as! ChatListCell
         
 //        cell.chatterImage.image = "not yet"
-        cell.chatterName.text = chat.chatterName
+        cell.chatterName.text = chat.chatterEmail // => chat title will be name of a location where the chat was created.
         cell.chatPreview.text = chat.chatPreview
         cell.time.text = "Yesterday"
         
