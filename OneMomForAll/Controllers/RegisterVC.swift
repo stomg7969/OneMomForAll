@@ -16,6 +16,7 @@ class RegisterVC: UIViewController {
     @IBOutlet weak var pwTextField: UITextField!
     
     let realm = try! Realm()
+    let db = Firestore.firestore()
     var user: Results<User>?
     
     override func viewDidLoad() {
@@ -65,9 +66,23 @@ class RegisterVC: UIViewController {
     //MARK: - Data Manipulation
     func saveUser(_ user: User) {
         do {
-            // .write - committing changes.
+            // .write - committing changes (Realm).
             try realm.write {
                 realm.add(user)
+            }
+            // Firestore
+            db.collection(K.Firebase.userCollection).document(user.email).setData([
+                K.Firebase.email: user.email,
+                K.Firebase.username: "TemporaryName",
+                K.Firebase.usernameUpdated: false,
+                K.Firebase.numOfMale: 0,
+                K.Firebase.numOfFemale: 0
+            ]) { err in
+                if let err = err {
+                    print("Error writing user doc while registering: \(err)")
+                } else {
+                    print("Document successfully written!")
+                }
             }
         } catch {
             print("Error saving category \(error)")

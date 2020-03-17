@@ -41,10 +41,20 @@ struct K {
     }
     
     struct Firebase {
+        // collection name
         static let collectionName = "chat"
+        static let userCollection = "user"
+        // user info
+        static let email = "email"
+        static let username = "username"
+        static let usernameUpdated = "usernameUpdated"
+        static let numOfMale = "numOfMale"
+        static let numOfFemale = "numOfFemale"
+        // message info
         static let senderField = "sender"
         static let bodyField = "body"
         static let createdAt = "createdAt"
+        // chat info
         static let chatMember = "chatMember"
         static let messages = "messages"
         static let senderName = "senderName"
