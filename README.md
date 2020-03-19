@@ -24,6 +24,7 @@ Parents can located near by friendly parents to offer/request help with anything
 - Add favorite/helpful "parent friend".
 - Picture profile using Firebase Storage.
 - Text translator for globalization (Firebase has extension).
+- Nearby users filter feature (because there will be a lot of users).
 
 ## Important!
 Sharing location can be a big decision for some people especially for parents. It is important to understand how safely our application can administrate users' locations.

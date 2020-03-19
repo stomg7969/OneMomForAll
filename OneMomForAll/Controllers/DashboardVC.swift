@@ -11,6 +11,7 @@ import Firebase
 import RealmSwift
 import SwiftHEXColors
 import SwipeCellKit
+import CoreLocation
 
 class DashboardVC: UIViewController {
     
@@ -25,6 +26,7 @@ class DashboardVC: UIViewController {
     var childList: Results<Child>?
     let realm = try! Realm() // Valid way of declaring for realm.
     let db = Firestore.firestore()
+    let locManager = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -113,17 +115,18 @@ class DashboardVC: UIViewController {
         childList = currUser?.children.sorted(byKeyPath: "calcAge", ascending: true)
 //        tableView?.reloadData()
     }
-    //MARK: - Navigation Btns
+    
+    //MARK: - Btns Pressed
     @IBAction func newChildBtn(_ sender: UIButton) {
         performSegue(withIdentifier: K.childForm, sender: self)
     }
     @IBAction func locationViewBtn(_ sender: UIButton) {
+        popupWarningMsg(msgNumber: 3)        
         performSegue(withIdentifier: K.locationList, sender: self)
     }    
     @IBAction func chatViewBtn(_ sender: UIButton) {
         performSegue(withIdentifier: K.chatList, sender: self)
     }
-    
     
     //MARK: - Children tableView
 }
@@ -217,5 +220,83 @@ extension DashboardVC: SwipeTableViewCellDelegate {
             }
             // tableView.reloadData()
         }
+    }
+}
+
+//MARK: - CLLocation Manager
+extension DashboardVC: CLLocationManagerDelegate {
+    @IBAction func setLocationBtn(_ sender: UIButton) {
+        checkLocationServices()
+    }
+    
+    func checkLocationServices() {
+        if CLLocationManager.locationServicesEnabled() {
+            setupLocationManager()
+            checkLocationAuthorization()
+        } else {
+            popupWarningMsg(msgNumber: 1)
+        }
+    }
+    
+    func getCurrnetLocationCoords() {
+        if let coords = locManager.location?.coordinate {
+            print("latitude => ", coords.latitude) // CLLocationDegrees
+            print("longitude => ", coords.longitude)
+//            locManager.location?.distance(from: <#T##CLLocation#>)
+        }
+    }
+    
+    func setupLocationManager() {
+        locManager.delegate = self
+        locManager.desiredAccuracy = kCLLocationAccuracyBest
+    }
+    
+    func checkLocationAuthorization() {
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedWhenInUse:
+            getCurrnetLocationCoords()
+            break
+        case .denied:
+            popupWarningMsg(msgNumber: 1)
+            break
+        case .notDetermined:
+            locManager.requestWhenInUseAuthorization()
+            break
+        case .restricted:
+            popupWarningMsg(msgNumber: 1)
+            break
+        case .authorizedAlways:
+            popupWarningMsg(msgNumber: 2)
+            locManager.requestWhenInUseAuthorization()
+            break
+        default:
+            print("switch statment: Default")
+        }
+    }
+    
+    func popupWarningMsg(msgNumber num: Int) {
+        if num == 1 {
+            let alert = UIAlertController(title: "Error!", message: "Enable location service from the setting.", preferredStyle: .alert)
+            let cancel = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+            alert.addAction(cancel)
+            present(alert, animated: true, completion: nil)
+        
+        } else if num == 2 {
+            let alert = UIAlertController(title: "Privacy first!", message: "For your privacy, we recommend you to select 'Allow Once' to share your location.", preferredStyle: .alert)
+            let cancel = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+            alert.addAction(cancel)
+            present(alert, animated: true, completion: nil)
+        
+        } else {
+            let alert = UIAlertController(title: "Note", message: "Confirm if you have updated your current location.", preferredStyle: .alert)
+            let cancel = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+            alert.addAction(cancel)
+            present(alert, animated: true, completion: nil)
+        }
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        checkLocationAuthorization()
     }
 }
