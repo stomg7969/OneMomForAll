@@ -247,13 +247,13 @@ extension DashboardVC: CLLocationManagerDelegate {
             
             let latitude = coords.latitude
             let longitude = coords.longitude
-//            location = CLLocation(latitude: latitude, longitude: longitude)
+            location = CLLocation(latitude: latitude, longitude: longitude)
             // Seoul
 //            location = CLLocation(latitude: 37.532600, longitude: 127.023612)
             // Busan
 //            location = CLLocation(latitude: 37.10278, longitude: 129.04028)
             // Paris
-            location = CLLocation(latitude: 48.8534100, longitude: 2.3488000)
+//            location = CLLocation(latitude: 48.8534100, longitude: 2.3488000)
             
             convertToAddress(with: location!)
         }
@@ -278,6 +278,17 @@ extension DashboardVC: CLLocationManagerDelegate {
             
             // With the infomration above, save necessary info to the Cloud.
             // Filter only users that has the same name of Country? City? Thoroughfare? and list them (Listing is for the LocationTVC's job).
+//            if let currUserEmail = Auth.auth().currentUser?.email {
+//                self.db.collection(K.Firebase.userCollection).document(currUserEmail).updateData([
+//                    // update location info. FIRST: update the doc from Firebase!!!
+//                ]) { err in
+//                    if let err = err {
+//                        print("Error updating location info: \(err)")
+//                    } else {
+//                        print("Document successfully updated")
+//                    }
+//                }
+//            }
         }
     }
     
