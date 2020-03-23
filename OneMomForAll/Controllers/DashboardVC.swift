@@ -27,6 +27,7 @@ class DashboardVC: UIViewController {
     let realm = try! Realm() // Valid way of declaring for realm.
     let db = Firestore.firestore()
     let locManager = CLLocationManager()
+    var location: CLLocation?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -243,6 +244,40 @@ extension DashboardVC: CLLocationManagerDelegate {
             print("latitude => ", coords.latitude) // CLLocationDegrees
             print("longitude => ", coords.longitude)
 //            locManager.location?.distance(from: <#T##CLLocation#>)
+            
+            let latitude = coords.latitude
+            let longitude = coords.longitude
+//            location = CLLocation(latitude: latitude, longitude: longitude)
+            // Seoul
+//            location = CLLocation(latitude: 37.532600, longitude: 127.023612)
+            // Busan
+//            location = CLLocation(latitude: 37.10278, longitude: 129.04028)
+            // Paris
+            location = CLLocation(latitude: 48.8534100, longitude: 2.3488000)
+            
+            convertToAddress(with: location!)
+        }
+    }
+    
+    func convertToAddress(with coordinate: CLLocation) {
+        let geoCoder = CLGeocoder()
+        
+        geoCoder.reverseGeocodeLocation(coordinate) { (placemarks, error) in
+            guard let placemark = placemarks?.first else { return }
+            
+            print("locality => ", placemark.locality ?? "X") // "New York"
+            print("administrativeArea => ", placemark.administrativeArea ?? "X") // "NY"
+            print("name => ", placemark.name ?? "X") // Full Street Info
+            print("thoroughfare => ", placemark.thoroughfare ?? "X") // "Street Name"
+            print("region => ", placemark.region ?? "X") // Coord info ([CLCircularRegion: Dict])
+            print("postalCode => ", placemark.postalCode ?? "X") // Zip code
+            print("subLocality => ", placemark.subLocality ?? "X") // "Queens"
+            print("subThoroughfare => ", placemark.subThoroughfare ?? "X") // Street Number
+            print("subAdministrativeArea => ", placemark.subAdministrativeArea ?? "X") // "Queens"
+            print("country =>", placemark.country ?? "X")
+            
+            // With the infomration above, save necessary info to the Cloud.
+            // Filter only users that has the same name of Country? City? Thoroughfare? and list them (Listing is for the LocationTVC's job).
         }
     }
     
@@ -255,20 +290,17 @@ extension DashboardVC: CLLocationManagerDelegate {
         switch CLLocationManager.authorizationStatus() {
         case .authorizedWhenInUse:
             getCurrnetLocationCoords()
-            break
         case .denied:
             popupWarningMsg(msgNumber: 1)
             break
         case .notDetermined:
             locManager.requestWhenInUseAuthorization()
-            break
         case .restricted:
             popupWarningMsg(msgNumber: 1)
             break
         case .authorizedAlways:
             popupWarningMsg(msgNumber: 2)
             locManager.requestWhenInUseAuthorization()
-            break
         default:
             print("switch statment: Default")
         }

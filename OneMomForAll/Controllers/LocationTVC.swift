@@ -23,6 +23,7 @@ class LocationTVC: UITableViewController {
     }
     
     func loadNearByUsers() {
+        // Since CLLocation, instead of realm, will use FireStore to collect near by users.
         if let currUserEmail = currentUser?.email {
             userList = realm.objects(User.self).filter("email != %@", currUserEmail)
         }
