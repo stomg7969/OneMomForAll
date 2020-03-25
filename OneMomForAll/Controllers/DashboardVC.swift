@@ -242,9 +242,6 @@ extension DashboardVC: CLLocationManagerDelegate {
     }
     
     func getCurrnetLocationCoords() {
-        print("locManager ==> ", locManager)
-        print("location ==> ", locManager.location ?? "location?")
-        print("coordinate ==> ", locManager.location?.coordinate ?? "coordinate?")
         if let coords = locManager.location?.coordinate {
             
             let location = CLLocation(latitude: coords.latitude, longitude: coords.longitude)
