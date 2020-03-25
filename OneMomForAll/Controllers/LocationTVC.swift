@@ -36,6 +36,7 @@ class LocationTVC: UITableViewController {
                         for document in querySnapshot!.documents {
                             
                             // ...
+                            // Create global array for users
                             print(document)
                         }
                     }
