@@ -27,7 +27,8 @@ class DashboardVC: UIViewController {
     let realm = try! Realm() // Valid way of declaring for realm.
     let db = Firestore.firestore()
     let locManager = CLLocationManager()
-    var location: CLLocation?
+    var locality: String?
+//    var location: CLLocation?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -122,7 +123,7 @@ class DashboardVC: UIViewController {
         performSegue(withIdentifier: K.childForm, sender: self)
     }
     @IBAction func locationViewBtn(_ sender: UIButton) {
-        popupWarningMsg(msgNumber: 3)        
+//        popupWarningMsg(msgNumber: 3)   
         performSegue(withIdentifier: K.locationList, sender: self)
     }    
     @IBAction func chatViewBtn(_ sender: UIButton) {
@@ -177,7 +178,8 @@ extension DashboardVC: UITableViewDelegate, UITableViewDataSource {
             
         } else if segue.identifier == K.locationList {
             let destinationVC = segue.destination as! LocationTVC
-            destinationVC.currentUser = currUser                 
+            destinationVC.currentUser = currUser
+            destinationVC.locality = locality
         }
     }
 }
@@ -240,22 +242,20 @@ extension DashboardVC: CLLocationManagerDelegate {
     }
     
     func getCurrnetLocationCoords() {
+        print("locManager ==> ", locManager)
+        print("location ==> ", locManager.location ?? "location?")
+        print("coordinate ==> ", locManager.location?.coordinate ?? "coordinate?")
         if let coords = locManager.location?.coordinate {
-            print("latitude => ", coords.latitude) // CLLocationDegrees
-            print("longitude => ", coords.longitude)
-//            locManager.location?.distance(from: <#T##CLLocation#>)
             
-            let latitude = coords.latitude
-            let longitude = coords.longitude
-            location = CLLocation(latitude: latitude, longitude: longitude)
+            let location = CLLocation(latitude: coords.latitude, longitude: coords.longitude)
             // Seoul
-//            location = CLLocation(latitude: 37.532600, longitude: 127.023612)
-            // Busan
-//            location = CLLocation(latitude: 37.10278, longitude: 129.04028)
+//            let location = CLLocation(latitude: 37.532600, longitude: 127.023612)
+            // Deajeon
+//            let location = CLLocation(latitude: 36.3438215, longitude: 127.3918071)
             // Paris
-//            location = CLLocation(latitude: 48.8534100, longitude: 2.3488000)
+//            let location = CLLocation(latitude: 48.8534100, longitude: 2.3488000)
             
-            convertToAddress(with: location!)
+            convertToAddress(with: location)
         }
     }
     
@@ -276,19 +276,20 @@ extension DashboardVC: CLLocationManagerDelegate {
             print("subAdministrativeArea => ", placemark.subAdministrativeArea ?? "X") // "Queens"
             print("country =>", placemark.country ?? "X")
             
-            // With the infomration above, save necessary info to the Cloud.
-            // Filter only users that has the same name of Country? City? Thoroughfare? and list them (Listing is for the LocationTVC's job).
-//            if let currUserEmail = Auth.auth().currentUser?.email {
-//                self.db.collection(K.Firebase.userCollection).document(currUserEmail).updateData([
-//                    // update location info. FIRST: update the doc from Firebase!!!
-//                ]) { err in
-//                    if let err = err {
-//                        print("Error updating location info: \(err)")
-//                    } else {
-//                        print("Document successfully updated")
-//                    }
-//                }
-//            }
+            // Global variable to pass to LocationTVC.
+            self.locality = placemark.locality ?? "X"
+            
+            if let currUserEmail = Auth.auth().currentUser?.email {
+                self.db.collection(K.Firebase.userCollection).document(currUserEmail).updateData([
+                    K.Firebase.locality: placemark.locality ?? "Not found"
+                ]) { err in
+                    if let err = err {
+                        print("Error updating location info: \(err)")
+                    } else {
+                        print("Document successfully updated")
+                    }
+                }
+            }
         }
     }
     

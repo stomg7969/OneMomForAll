@@ -50,6 +50,7 @@ struct K {
         static let usernameUpdated = "usernameUpdated"
         static let numOfMale = "numOfMale"
         static let numOfFemale = "numOfFemale"
+        static let locality = "locality"
         // message info
         static let senderField = "sender"
         static let bodyField = "body"

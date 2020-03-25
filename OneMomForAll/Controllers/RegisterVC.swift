@@ -76,7 +76,8 @@ class RegisterVC: UIViewController {
                 K.Firebase.username: "TemporaryName",
                 K.Firebase.usernameUpdated: false,
                 K.Firebase.numOfMale: 0,
-                K.Firebase.numOfFemale: 0
+                K.Firebase.numOfFemale: 0,
+                K.Firebase.locality: ""
             ]) { err in
                 if let err = err {
                     print("Error writing user doc while registering: \(err)")

@@ -8,12 +8,15 @@
 
 import UIKit
 import RealmSwift
+import Firebase
 
 class LocationTVC: UITableViewController {
 
     var userList: Results<User>?
     var currentUser: User?
     let realm = try! Realm()
+    let db = Firestore.firestore()
+    var locality: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,17 +26,24 @@ class LocationTVC: UITableViewController {
     }
     
     func loadNearByUsers() {
-        // Since CLLocation, instead of realm, will use FireStore to collect near by users.
-//        db.collection("cities").whereField("capital", isEqualTo: true)
-//            .getDocuments() { (querySnapshot, err) in
-//                if let err = err {
-//                    print("Error getting documents: \(err)")
-//                } else {
-//                    for document in querySnapshot!.documents {
-//                        print("\(document.documentID) => \(document.data())")
-//                    }
-//                }
-//        }
+        // Fetch multiple documents with locality name brought from DashBoardVC.
+        if let locality = locality {
+            db.collection(K.Firebase.collectionName).whereField(K.Firebase.locality, isEqualTo: locality)
+                .getDocuments() { (querySnapshot, err) in
+                    if let err = err {
+                        print("Error getting user documents: \(err)")
+                    } else {
+                        for document in querySnapshot!.documents {
+                            
+                            // ...
+                            print(document)
+                        }
+                    }
+            }
+        }
+        
+        
+        // Once Firebase works, Below codes are not necessary.
         if let currUserEmail = currentUser?.email {
             userList = realm.objects(User.self).filter("email != %@", currUserEmail)
         }
