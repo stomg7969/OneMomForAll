@@ -39,6 +39,12 @@ class LocationTVC: UITableViewController {
                     } else {
                         for document in querySnapshot!.documents {
                             print(document.data())
+                            // =>
+//                            ["numOfFemale": 0, "numOfMale": 0, "locality": New York, "username": Jane, "email": a@b.com, "usernameUpdated": 1]
+//                            ["numOfFemale": 0, "email": b@b.com, "locality": New York, "numOfMale": 0, "usernameUpdated": 1, "username": Nate]
+                            
+                            // then ... ,
+                            
 //                            userArray.append(// newly fetched data)
                             
                             // refer to ChatRoomVC's loadMessages()
