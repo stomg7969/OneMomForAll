@@ -17,13 +17,13 @@ class LocationTVC: UITableViewController {
     let realm = try! Realm()
     let db = Firestore.firestore()
     var locality: String?
+//    var userArray = [User (but User without the Realm)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loadNearByUsers()
         setTableViewDelegates()
-        print("locality =====>", locality)
     }
     
     func loadNearByUsers() {
@@ -31,29 +31,22 @@ class LocationTVC: UITableViewController {
         
         // Fetch multiple documents with locality name brought from DashBoardVC.
         // Get locality from firestore
-//        db.collection(K.Firebase.collectionName).whereField(K.Firebase.locality, isEqualTo: "New York")
-//            .getDocuments() { (querySnapshot, err) in
-//                if let err = err {
-//                    print("Error getting user documents: \(err)")
-//                } else {
-//                    for document in querySnapshot!.documents {
-//
-//                        // ...
-//                        // Create global array for users
-//                    }
-//                }
-//
-//        }
-        db.collection(K.Firebase.collectionName).getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    print("\(document.documentID) => \(document.data())")
-                }
+        if let locality = locality {
+            db.collection(K.Firebase.userCollection).whereField(K.Firebase.locality, isEqualTo: locality)
+                .getDocuments() { (querySnapshot, err) in
+                    if let err = err {
+                        print("Error getting user documents: \(err)")
+                    } else {
+                        for document in querySnapshot!.documents {
+                            print(document.data())
+//                            userArray.append(// newly fetched data)
+                            
+                            // refer to ChatRoomVC's loadMessages()
+                            // Create global array for users
+                        }
+                    }
             }
         }
-        
         
         // Once Firebase works, Below codes are not necessary.
         if let currUserEmail = currentUser?.email {
