@@ -123,8 +123,12 @@ class DashboardVC: UIViewController {
         performSegue(withIdentifier: K.childForm, sender: self)
     }
     @IBAction func locationViewBtn(_ sender: UIButton) {
-//        popupWarningMsg(msgNumber: 3)   
-        performSegue(withIdentifier: K.locationList, sender: self)
+        if locality == nil {
+            checkLocationServices()
+            popupWarningMsg(msgNumber: 3)
+        } else {
+            performSegue(withIdentifier: K.locationList, sender: self)
+        }
     }    
     @IBAction func chatViewBtn(_ sender: UIButton) {
         performSegue(withIdentifier: K.chatList, sender: self)
@@ -329,7 +333,7 @@ extension DashboardVC: CLLocationManagerDelegate {
             present(alert, animated: true, completion: nil)
         
         } else {
-            let alert = UIAlertController(title: "Note", message: "Confirm if you have updated your current location.", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Note", message: "Updated current location.", preferredStyle: .alert)
             let cancel = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
             alert.addAction(cancel)
             present(alert, animated: true, completion: nil)

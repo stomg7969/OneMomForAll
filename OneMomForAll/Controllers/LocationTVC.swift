@@ -23,23 +23,34 @@ class LocationTVC: UITableViewController {
         
         loadNearByUsers()
         setTableViewDelegates()
+        print("locality =====>", locality)
     }
     
     func loadNearByUsers() {
+        
+        
         // Fetch multiple documents with locality name brought from DashBoardVC.
-        if let locality = locality {
-            db.collection(K.Firebase.collectionName).whereField(K.Firebase.locality, isEqualTo: locality)
-                .getDocuments() { (querySnapshot, err) in
-                    if let err = err {
-                        print("Error getting user documents: \(err)")
-                    } else {
-                        for document in querySnapshot!.documents {
-                            
-                            // ...
-                            // Create global array for users
-                            print(document)
-                        }
-                    }
+        // Get locality from firestore
+//        db.collection(K.Firebase.collectionName).whereField(K.Firebase.locality, isEqualTo: "New York")
+//            .getDocuments() { (querySnapshot, err) in
+//                if let err = err {
+//                    print("Error getting user documents: \(err)")
+//                } else {
+//                    for document in querySnapshot!.documents {
+//
+//                        // ...
+//                        // Create global array for users
+//                    }
+//                }
+//
+//        }
+        db.collection(K.Firebase.collectionName).getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    print("\(document.documentID) => \(document.data())")
+                }
             }
         }
         
