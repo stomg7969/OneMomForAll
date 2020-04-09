@@ -43,7 +43,7 @@ class LocationTVC: UITableViewController {
 //                            ["numOfFemale": 0, "numOfMale": 0, "locality": New York, "username": Jane, "email": a@b.com, "usernameUpdated": 1]
 //                            ["numOfFemale": 0, "email": b@b.com, "locality": New York, "numOfMale": 0, "usernameUpdated": 1, "username": Nate]
                             
-                            // then ... ,
+                            // then ... , (I only need username and number of child info)
                             
 //                            userArray.append(// newly fetched data)
                             
